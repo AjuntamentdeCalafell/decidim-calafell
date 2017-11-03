@@ -3,8 +3,8 @@
   "description": "decidim_calafell - Direct and participatory democracy web platform based on Decidim framework",
   "keywords": [],
   "addons": [
-    "heroku-postgresql:hobby-dev",
-    "heroku-redis:hobby-dev",
+    "heroku-postgresql",
+    "heroku-redis",
     "logentries:le_tryit",
     "memcachedcloud:30",
     "newrelic:wayne",
