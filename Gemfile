@@ -4,11 +4,8 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", "0.7.1"
+gem "decidim", "0.7.2"
 gem "decidim-assemblies"
-
-# Uncomment the following line if you want to use decidim-assemblies plugin
-# gem "decidim-assemblies", "0.7.1"
 
 gem "bootsnap", require: false
 
@@ -20,7 +17,7 @@ gem "faker", "~> 1.8.4"
 group :development, :test do
   gem "byebug", platform: :mri
 
-  gem "decidim-dev", "0.7.1"
+  gem "decidim-dev"
 end
 
 group :development do
