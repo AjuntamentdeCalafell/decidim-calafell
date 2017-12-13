@@ -4,8 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", "0.7.2"
-gem "decidim-assemblies"
+gem "decidim", "~>0.8.2"
 
 gem "bootsnap", require: false
 
