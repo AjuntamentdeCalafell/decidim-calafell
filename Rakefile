@@ -3,6 +3,4 @@
 
 require_relative 'config/application'
 
-require "rspec/core/rake_task"
-
 Rails.application.load_tasks
