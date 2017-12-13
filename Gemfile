@@ -5,6 +5,7 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "decidim", "~>0.8.2"
+gem "decidim-assemblies"
 
 gem "puma", "~> 3.0"
 gem "uglifier", ">= 1.3.0"
