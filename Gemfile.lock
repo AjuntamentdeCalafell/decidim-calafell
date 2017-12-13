@@ -641,6 +641,7 @@ DEPENDENCIES
   newrelic_rpm
   passenger
   puma (~> 3.0)
+  rspec-rails
   sendgrid-ruby
   sentry-raven
   sidekiq
