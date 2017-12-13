@@ -4,10 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", "0.7.2"
-gem "decidim-assemblies"
-
-gem "bootsnap", require: false
+gem "decidim", "~>0.8.2"
 
 gem "puma", "~> 3.0"
 gem "uglifier", ">= 1.3.0"
@@ -21,7 +18,6 @@ group :development, :test do
 end
 
 group :development do
-  gem "decidim-deploy-heroku", git: "https://github.com/codegram/decidim-deploy-heroku.git"
   gem "letter_opener_web", "~> 1.3.0"
   gem "listen", "~> 3.1.0"
   gem "spring"
