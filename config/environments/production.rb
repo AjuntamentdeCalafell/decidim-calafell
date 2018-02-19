@@ -113,9 +113,6 @@ Rails.application.configure do
     }
   end
 
-  if ENV["IP_WHITELIST"]
-    config.middleware.use IpWhitelist, ENV["IP_WHITELIST"].split(",")
-  end
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
