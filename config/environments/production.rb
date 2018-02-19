@@ -113,6 +113,12 @@ Rails.application.configure do
     }
   end
 
+  if ENV["AUTH"]
+    config.middleware.use Rack::Auth::Basic, "Protected Area" do |u, p|
+      username, password = ENV["AUTH"].split(":")
+      username == u && password == p
+    end
+  end
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
