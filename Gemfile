@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", "~> 0.10.1"
+gem "decidim", "~> 0.11.1"
 gem "decidim-assemblies"
 
 gem "puma", "~> 3.0"
