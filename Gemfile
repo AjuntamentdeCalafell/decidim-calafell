@@ -3,9 +3,9 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
+DECIDIM_VERSION = "~> 0.13.1"
 
-gem "decidim", "~> 0.11.1"
-gem "decidim-assemblies"
+gem "decidim", DECIDIM_VERSION
 
 gem "puma", "~> 3.0"
 gem "uglifier", ">= 1.3.0"
@@ -15,7 +15,7 @@ gem "faker", "~> 1.8.4"
 group :development, :test do
   gem "byebug", platform: :mri
 
-  gem "decidim-dev"
+  gem "decidim-dev", DECIDIM_VERSION
   gem "rspec-rails"
 end
 
