@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = "Decidim Calafell"
-  config.mailer_sender = "decidim@calafell.cat"
-  config.authorization_handlers = []
+  config.application_name = 'Decidim Calafell'
+  config.mailer_sender = 'decidim@calafell.cat'
+  config.authorization_handlers = ['CensusAuthorizationHandler']
 
   # Change these lines to set your preferred locales
   config.default_locale = :ca
-  config.available_locales = [:ca, :es]
+  config.available_locales = %i[ca es]
 
   # Geocoder configuration
   # config.geocoder = {
@@ -43,8 +43,8 @@ Decidim.configure do |config|
   #
   config.enable_html_header_snippets = false
 
-  if ENV["HEROKU_APP_NAME"].present?
-    config.base_uploads_path = ENV["HEROKU_APP_NAME"] + "/"
+  if ENV['HEROKU_APP_NAME'].present?
+    config.base_uploads_path = ENV['HEROKU_APP_NAME'] + '/'
   end
 end
 
