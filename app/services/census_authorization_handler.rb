@@ -17,6 +17,7 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
   validates :date_of_birth, :postal_code, presence: true
   validates :document_type, inclusion: { in: %i[dni nie passport community_dni] }, presence: true
   validates :document_number, format: { with: /\A[A-z0-9]*\z/ }, presence: true
+  validates :postal_code, format: { with: /\A[0-9]*\z/ }
 
   validate :document_type_valid
   validate :over_16
@@ -34,7 +35,7 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
   end
 
   def metadata
-    super.merge(district: district) if district.present?
+    super.merge(postal_code: postal_code)
   end
 
   private
@@ -68,8 +69,9 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
 
   def response
     return nil if document_number.blank? ||
-                  document_type.blank? ||
-                  date_of_birth.blank?
+                  sanitized_document_type.blank? ||
+                  date_of_birth.blank? ||
+                  postal_code.blank?
 
     return @response if defined?(@response)
 

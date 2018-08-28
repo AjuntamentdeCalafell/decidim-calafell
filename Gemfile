@@ -10,6 +10,8 @@ gem "decidim", DECIDIM_VERSION
 gem "puma", "~> 3.0"
 gem "uglifier", ">= 1.3.0"
 
+gem "virtus-multiparams"
+
 gem "faker", "~> 1.8.4"
 
 group :development, :test do
