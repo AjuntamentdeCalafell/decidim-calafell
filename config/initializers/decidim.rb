@@ -49,9 +49,6 @@ end
 
 Decidim::Verifications.register_workflow(:census_authorization_handler) do |auth|
   auth.form = 'CensusAuthorizationHandler'
-  auth.options do |options|
-    options.attribute :postal_code, type: :string, required: true
-  end
 end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales
