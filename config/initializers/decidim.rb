@@ -3,7 +3,6 @@
 Decidim.configure do |config|
   config.application_name = 'Decidim Calafell'
   config.mailer_sender = 'decidim@calafell.cat'
-  config.authorization_handlers = ['CensusAuthorizationHandler']
 
   # Change these lines to set your preferred locales
   config.default_locale = :ca
@@ -45,6 +44,13 @@ Decidim.configure do |config|
 
   if ENV['HEROKU_APP_NAME'].present?
     config.base_uploads_path = ENV['HEROKU_APP_NAME'] + '/'
+  end
+end
+
+Decidim::Verifications.register_workflow(:census_authorization_handler) do |auth|
+  auth.form = 'CensusAuthorizationHandler'
+  auth.options do |options|
+    options.attribute :postal_code, type: :string, required: true
   end
 end
 
