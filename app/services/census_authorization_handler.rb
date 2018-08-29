@@ -76,6 +76,7 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
     return @response if defined?(@response)
 
     response ||= Faraday.get Rails.application.secrets.census_url do |request|
+      request.options.timeout = 10
       request.params['auth_token'] = Rails.application.secrets.census_auth_token
       request.params['document_type'] = sanitized_document_type
       request.params['document_number'] = document_number
