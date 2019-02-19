@@ -60,7 +60,7 @@ ca:
           error: S'ha produït un error en l'actualització d'un usuari per a aquest consell participatiu.
           success: L'usuari s'ha actualitzat correctament per a aquest consell participatiu.
       menu:
-        assemblies: Consell Participatius
+        assemblies: Consells Participatius
         assemblies_submenu:
           assembly_admins: Usuaris del consell participatiu
       models:
@@ -69,7 +69,7 @@ ca:
         assembly_user_role:
           name: Usuari del consell participatiu
       titles:
-        assemblies: Consell Participatius
+        assemblies: Consells Participatius
     assemblies:
       admin:
         assemblies:
@@ -80,24 +80,24 @@ ca:
             slug_help: 'Els noms curts d''URL s''utilitzen per generar els URL que apunten a aquest consell participatiu. Només accepta lletres, números i guions, i ha de començar amb una lletra. Exemple: %{url}'
     assemblies:
       index:
-        title: Consell Participatius
+        title: Consells Participatius
       pages:
         home:
           highlighted_assemblies:
-            active_assemblies: Consell Participatius actius
+            active_assemblies: Consells Participatius actius
             see_all_assemblies: Veure tots els consells participatius
       statistics:
-        assemblies_count: Consell Participatius
+        assemblies_count: Consells Participatius
     menu:
-      assemblies: Consell Participatius
+      assemblies: Consells Participatius
   layouts:
     decidim:
       assemblies:
         index:
-          promoted_assemblies: Consell Participatius destacats
+          promoted_assemblies: Consells Participatius destacats
         order_by_assemblies:
           assemblies:
-            one: "%{count} consell participatius"
-            other: "%{count} Consell Participatius"
+            one: "%{count} consells participatius"
+            other: "%{count} Consells Participatius"
       assembly_header:
         assembly_menu_item: Consell participatiu

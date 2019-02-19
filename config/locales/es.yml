@@ -60,7 +60,7 @@ es:
           error: Ha habido un error al actualizar un usuario para este consejo participativo.
           success: Usuario actualizado con éxito para este consejo participativo.
       menu:
-        assemblies: Consejo Participativos
+        assemblies: Consejos Participativos
         assemblies_submenu:
           assembly_admins: Usuarios del consejo participativo
       models:
@@ -69,7 +69,7 @@ es:
         assembly_user_role:
           name: Usuario del consejo participativo
       titles:
-        assemblies: Consejo Participativos
+        assemblies: Consejos Participativos
     assemblies:
       admin:
         assemblies:
@@ -80,24 +80,24 @@ es:
             slug_help: 'Los textos cortos de URL se utilizan para generar las URL que apuntan a este consejo participativo. Sólo acepta letras, números y guiones, y debe comenzar con una letra. Ejemplo: %{url}'
     assemblies:
       index:
-        title: Consejo Participativos
+        title: Consejos Participativos
       pages:
         home:
           highlighted_assemblies:
-            active_assemblies: Consejo Participativos activos
-            see_all_assemblies: Ver todos los consejo participativos
+            active_assemblies: Consejos Participativos activos
+            see_all_assemblies: Ver todos los consejos participativos
       statistics:
-        assemblies_count: Consejo Participativos
+        assemblies_count: Consejos Participativos
     menu:
-      assemblies: Consejo Participativos
+      assemblies: Consejos Participativos
   layouts:
     decidim:
       assemblies:
         index:
-          promoted_assemblies: Consejo Participativos destacados
+          promoted_assemblies: Consejos Participativos destacados
         order_by_assemblies:
           assemblies:
-            one: "%{count} consejo participativos"
-            other: "%{count} consejo participativos"
+            one: "%{count} consejos participativos"
+            other: "%{count} consejos participativos"
       assembly_header:
         assembly_menu_item: Consejo participativo
