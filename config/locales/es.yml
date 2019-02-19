@@ -1,0 +1,103 @@
+es:
+  census_authorization_handler:
+    age_under_16: Tienes que ser mayor de 16 años para verificarte.
+    invalid_document: Número de documento incorrecto
+  decidim:
+    authorization_handlers:
+      census_authorization_handler:
+        explanation: Verifícate con el padrón
+        fields:
+          document_number: Número de documento
+          document_type: Tipo de documento
+          postal_code: Código postal
+          date_of_birth: Fecha de nacimiento
+        name: El padrón
+    census_authorization_handler:
+      document_types:
+        dni: DNI
+        nie: NIE
+        passport: Pasaporte
+        community_dni: DNI comunitario
+    admin:
+      assemblies:
+        create:
+          error: Se produjo un error al crear un nuevo consejo participativo.
+          success: Consejo Participativo creado correctamente.
+        destroy:
+          success: Consejo Participativo destruido correctamente.
+        new:
+          title: Nuevo consejo participativo
+        update:
+          error: Se ha producido un error al actualizar este consejo participativo.
+          success: Consejo Participativo se ha actualizado correctamente.
+      assemblies_copies:
+        create:
+          error: Se produjo un error al duplicar este consejo participativo.
+          success: Consejo Participativo duplicado correctamente.
+      assembly_copies:
+        new:
+          title: Duplicar consejo participativo
+      assembly_publications:
+        create:
+          error: Se produjo un error al publicar este consejo participativo.
+          success: Consejo Participativo publicado con éxito.
+        destroy:
+          error: Se produjo un error al despublicar este consejo participativo.
+          success: Consejo Participativo despublicado con éxito.
+      assembly_user_roles:
+        create:
+          error: Se ha producido un error al agregar un usuario para este consejo participativo.
+          success: Usuario creado con éxito para este consejo participativo.
+        destroy:
+          success: Usuario destruido con éxito para este consejo participativo.
+        edit:
+          title: Actualizar el usuario del consejo participativo.
+        index:
+          assembly_admins_title: Usuarios del consejo participativo
+        new:
+          title: Nuevo usuario del consejo participativo.
+        update:
+          error: Ha habido un error al actualizar un usuario para este consejo participativo.
+          success: Usuario actualizado con éxito para este consejo participativo.
+      menu:
+        assemblies: Consejo Participativos
+        assemblies_submenu:
+          assembly_admins: Usuarios del consejo participativo
+      models:
+        assembly:
+          name: consejo participativo
+        assembly_user_role:
+          name: Usuario del consejo participativo
+      titles:
+        assemblies: Consejo Participativos
+    assemblies:
+      admin:
+        assemblies:
+          form:
+            slug_help: 'Los textos cortos de URL se utilizan para generar las URL que apuntan a este consejo participativo. Sólo acepta letras, números y guiones, y debe comenzar con una letra. Ejemplo: %{url}'
+        assembly_copies:
+          form:
+            slug_help: 'Los textos cortos de URL se utilizan para generar las URL que apuntan a este consejo participativo. Sólo acepta letras, números y guiones, y debe comenzar con una letra. Ejemplo: %{url}'
+    assemblies:
+      index:
+        title: Consejo Participativos
+      pages:
+        home:
+          highlighted_assemblies:
+            active_assemblies: Consejo Participativos activos
+            see_all_assemblies: Ver todos los consejo participativos
+      statistics:
+        assemblies_count: Consejo Participativos
+    menu:
+      assemblies: Consejo Participativos
+  layouts:
+    decidim:
+      assemblies:
+        index:
+          promoted_assemblies: Consejo Participativos destacados
+        order_by_assemblies:
+          assemblies:
+            one: "%{count} consejo participativos"
+            other: "%{count} consejo participativos"
+      assembly_header:
+        assembly_menu_item: Consejo participativo

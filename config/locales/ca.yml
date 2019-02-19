@@ -18,3 +18,86 @@ ca:
         nie: NIE
         passport: Passaport
         community_dni: DNI comunitari
+    admin:
+      assemblies:
+        create:
+          error: S'ha produït un error en crear un nou consell participatiu.
+          success: Consell Participatiu creat correctament.
+        destroy:
+          success: Consell participatiu s'ha eliminat amb èxit.
+        new:
+          title: Nou consell participatiu
+        update:
+          error: S'ha produït un error en actualitzar aquest consell participatiu.
+          success: Consell participatiu s'ha actualitzat correctament.
+      assemblies_copies:
+        create:
+          error: S'ha produït un error en duplicar aquest consell participatiu.
+          success: Consell participatiu s'ha duplicat correctament.
+      assembly_copies:
+        new:
+          title: Consell Participatiu duplicat
+      assembly_publications:
+        create:
+          error: S'ha produït un error en publicar aquest consell participatiu.
+          success: Consell Participatiu publicat amb èxit.
+        destroy:
+          error: S'ha produït un error en despublicar aquest consell participatiu.
+          success: Consell Participatiu despublicat amb èxit.
+      assembly_user_roles:
+        create:
+          error: S'ha produït un error en afegir un usuari per a aquest consell participatiu.
+          success: L'usuari s'ha creat correctament per a aquest consell participatiu.
+        destroy:
+          success: S'ha destruït l'usuari amb èxit per a aquest consell participatiu.
+        edit:
+          title: Actualitza l'usuari del consell participatiu.
+        index:
+          assembly_admins_title: Usuaris del consell participatiu
+        new:
+          title: Nou usuari del consell participatiu.
+        update:
+          error: S'ha produït un error en l'actualització d'un usuari per a aquest consell participatiu.
+          success: L'usuari s'ha actualitzat correctament per a aquest consell participatiu.
+      menu:
+        assemblies: Consell Participatius
+        assemblies_submenu:
+          assembly_admins: Usuaris del consell participatiu
+      models:
+        assembly:
+          name: Consell Participatiu
+        assembly_user_role:
+          name: Usuari del consell participatiu
+      titles:
+        assemblies: Consell Participatius
+    assemblies:
+      admin:
+        assemblies:
+          form:
+            slug_help: 'Els noms curts d''URL s''utilitzen per generar les URL que apunten a aquest consell participatiu. Només accepta lletres, números i guions, i ha de començar amb una lletra. Exemple: %{url}'
+        assembly_copies:
+          form:
+            slug_help: 'Els noms curts d''URL s''utilitzen per generar els URL que apunten a aquest consell participatiu. Només accepta lletres, números i guions, i ha de començar amb una lletra. Exemple: %{url}'
+    assemblies:
+      index:
+        title: Consell Participatius
+      pages:
+        home:
+          highlighted_assemblies:
+            active_assemblies: Consell Participatius actius
+            see_all_assemblies: Veure tots els consells participatius
+      statistics:
+        assemblies_count: Consell Participatius
+    menu:
+      assemblies: Consell Participatius
+  layouts:
+    decidim:
+      assemblies:
+        index:
+          promoted_assemblies: Consell Participatius destacats
+        order_by_assemblies:
+          assemblies:
+            one: "%{count} consell participatius"
+            other: "%{count} Consell Participatius"
+      assembly_header:
+        assembly_menu_item: Consell participatiu
