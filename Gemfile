@@ -9,6 +9,7 @@ gem "decidim", DECIDIM_VERSION
 
 gem "puma", "~> 3.0"
 gem "uglifier", ">= 1.3.0"
+gem "sprockets", "~> 3.7.2"
 
 gem "virtus-multiparams"
 
