@@ -7,7 +7,7 @@ DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "0.19-sta
 
 gem "decidim", DECIDIM_VERSION
 
-gem "puma", "~> 3.0"
+gem "puma", "~> 3.12"
 gem "uglifier", ">= 1.3.0"
 gem "sprockets", "~> 3.7.2"
 
