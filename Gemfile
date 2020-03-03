@@ -3,13 +3,14 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "0.19-stable" }
+DECIDIM_VERSION = "~> 0.20.0"
 
 gem "decidim", DECIDIM_VERSION
 
 gem "puma", "~> 3.12"
 gem "uglifier", ">= 1.3.0"
 gem "sprockets", "~> 3.7.2"
+gem "geocoder", "~> 1.5.2"
 
 gem "virtus-multiparams"
 
