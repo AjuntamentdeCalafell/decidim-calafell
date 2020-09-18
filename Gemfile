@@ -3,11 +3,11 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = "~> 0.20.0"
+DECIDIM_VERSION = "~> 0.22"
 
 gem "decidim", DECIDIM_VERSION
 
-gem "puma", "~> 3.12"
+gem "puma"
 gem "uglifier", ">= 1.3.0"
 gem "sprockets", "~> 3.7.2"
 gem "geocoder", "~> 1.5.2"
