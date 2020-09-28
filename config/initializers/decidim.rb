@@ -44,6 +44,8 @@ Decidim.configure do |config|
   if ENV['HEROKU_APP_NAME'].present?
     config.base_uploads_path = ENV['HEROKU_APP_NAME'] + '/'
   end
+
+  config.sms_gateway_service = "SmsGateway" if Rails.application.secrets.sms.values.all?(&:present?)
 end
 
 Decidim::Verifications.register_workflow(:census_authorization_handler) do |auth|

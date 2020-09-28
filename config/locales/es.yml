@@ -90,6 +90,8 @@ es:
         assemblies_count: Consejos Participativos
     menu:
       assemblies: Consejos Participativos
+    sms:
+      text: "Tu código para verificarte en Decidim Calafell es: %{code}"
   layouts:
     decidim:
       assemblies:

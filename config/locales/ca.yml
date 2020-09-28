@@ -90,6 +90,8 @@ ca:
         assemblies_count: Consells Participatius
     menu:
       assemblies: Consells Participatius
+    sms:
+      text: "El teu codi per verificar-te a Decidim Calafell és: %{code}"
   layouts:
     decidim:
       assemblies:
