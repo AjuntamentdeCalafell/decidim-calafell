@@ -11,9 +11,7 @@ gem "puma"
 gem "uglifier", ">= 1.3.0"
 gem "sprockets", "~> 3.7.2"
 gem "geocoder", "~> 1.5.2"
-
 gem "virtus-multiparams"
-
 gem "faker", "~> 1.8.4"
 
 group :development, :test do
