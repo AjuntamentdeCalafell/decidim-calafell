@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'byebug'
 
 # A Service to send SMS to Calafell's provider so users can be verified by SMS.
 class SmsGateway
