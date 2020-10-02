@@ -10,7 +10,7 @@ gem "decidim", DECIDIM_VERSION
 gem "puma"
 gem "uglifier", ">= 1.3.0"
 gem "sprockets", "~> 3.7.2"
-gem "geocoder", "~> 1.5.2"
+gem "geocoder", "~> 1.6.1"
 gem "virtus-multiparams"
 gem "faker", "~> 1.8.4"
 
