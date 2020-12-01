@@ -17,10 +17,15 @@ class AddAuthorToMeetings < ActiveRecord::Migration[5.2]
         meeting.decidim_author_id = meeting.organizer_id
         meeting.decidim_author_type = "Decidim::UserBaseEntity"
       else
+        if meeting.organization.nil?
+          puts "WARN: Meeting #{meeting.id} belongs to nil organization..."
+          next
+        end
+
         meeting.decidim_author_id = meeting.organization.id
         meeting.decidim_author_type = "Decidim::Organization"
       end
-      meeting.save!
+      meeting.save!(validate: false)
     end
 
     remove_column :decidim_meetings_meetings, :organizer_id
