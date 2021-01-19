@@ -11,7 +11,7 @@ if Rails.env.production?
       aws_access_key_id:     Rails.application.secrets.aws_access_key_id,       # required
       aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,   # required
       region:                'eu-central-1',                                    # optional, defaults to 'us-east-1'
-      endpoint:              'decidim-calafell.s3.eu-central-1.amazonaws.com/'
+      host:                  'decidim-calafell.s3.eu-central-1.amazonaws.com'
     }
     config.fog_directory  = 'decidim-calafell'                                  # required
     config.fog_public     = true # optional, defaults to true
