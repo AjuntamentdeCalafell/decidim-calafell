@@ -156,6 +156,17 @@ GIT
       wkhtmltopdf-binary (~> 0.12)
     decidim-generators (0.23.4)
       decidim-core (= 0.23.4)
+    decidim-initiatives (0.23.4)
+      decidim-admin (= 0.23.4)
+      decidim-comments (= 0.23.4)
+      decidim-core (= 0.23.4)
+      decidim-verifications (= 0.23.4)
+      kaminari (~> 1.2, >= 1.2.1)
+      origami (~> 2.1)
+      virtus-multiparams (~> 0.1)
+      wicked (~> 1.3)
+      wicked_pdf (~> 1.4)
+      wkhtmltopdf-binary (~> 0.12)
     decidim-meetings (0.23.4)
       cells-erb (~> 0.1.0)
       cells-rails (~> 0.0.9)
@@ -314,6 +325,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    colorize (0.8.1)
     concurrent-ruby (1.1.8)
     connection_pool (2.2.2)
     crack (0.4.5)
@@ -556,6 +568,8 @@ GEM
     omniauth-twitter (1.4.0)
       omniauth-oauth (~> 1.1)
       rack
+    origami (2.1.0)
+      colorize (~> 0.7)
     orm_adapter (0.5.0)
     paper_trail (10.3.1)
       activerecord (>= 4.2)
@@ -795,6 +809,8 @@ GEM
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    wicked (1.3.4)
+      railties (>= 3.0.7)
     wicked_pdf (1.4.0)
       activesupport
     wisper (2.0.1)
@@ -811,6 +827,7 @@ DEPENDENCIES
   dalli
   decidim!
   decidim-dev!
+  decidim-initiatives!
   faker (~> 1.8.4)
   fog-aws
   geocoder (~> 1.6.1)

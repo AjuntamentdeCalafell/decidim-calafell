@@ -6,6 +6,7 @@ ruby RUBY_VERSION
 DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", tag: "release/0.23-stable" }
 
 gem "decidim", DECIDIM_VERSION
+gem "decidim-initiatives", DECIDIM_VERSION
 
 gem "puma"
 gem "uglifier", ">= 1.3.0"
