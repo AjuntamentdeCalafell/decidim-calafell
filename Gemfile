@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", tag: "release/0.23-stable" }
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", tag: "release/0.24-stable" }
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
@@ -13,7 +13,7 @@ gem "uglifier", ">= 1.3.0"
 gem "sprockets", "~> 3.7.2"
 gem "geocoder", "~> 1.6.1"
 gem "virtus-multiparams"
-gem "faker", "~> 1.8.4"
+gem "faker"
 
 group :development, :test do
   gem "byebug", platform: :mri
