@@ -15,6 +15,8 @@ gem "geocoder", "~> 1.6.1"
 gem "virtus-multiparams"
 gem "faker"
 
+gem "execjs", "~> 2.7.0"
+
 group :development, :test do
   gem "byebug", platform: :mri
 
