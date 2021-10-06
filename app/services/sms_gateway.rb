@@ -49,7 +49,7 @@ class SmsGateway
 <?xml version="1.0" standalone="no"?>
     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://envios.rbs.innovatelecom.org">
      <soapenv:Body>
-        <env:enviarSms2>
+        <env:enviosms2>
            <env:sCodigoCuenta>#{Rails.application.secrets.sms.fetch(:username)}</env:sCodigoCuenta>
            <env:sClaveCuenta>#{Rails.application.secrets.sms.fetch(:password)}</env:sClaveCuenta>
            <env:sCodigoCanal>#{Rails.application.secrets.sms.fetch(:service_id)}</env:sCodigoCanal>
@@ -58,7 +58,7 @@ class SmsGateway
            <env:iPermanencia>10000</env:iPermanencia>
            <env:bEmergente>0</env:bEmergente>
            <env:bAcuse>0</env:bAcuse>
-        </env:enviarSms2>
+        </env:enviosms2>
        </soapenv:Body>
     </soapenv:Envelope>
 EOS
