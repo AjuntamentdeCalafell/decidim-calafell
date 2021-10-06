@@ -23,7 +23,7 @@ class SmsGateway
 
     connection = Faraday.new(Rails.application.secrets.sms.fetch(:service_url))
     response = connection.post do |request|
-      request.headers["SOAPAction"] = "enviosms2"
+      request.headers["SOAPAction"] = ""
       request.headers["Content-Type"] = "text/xml"
       request.body = request_body
     end
