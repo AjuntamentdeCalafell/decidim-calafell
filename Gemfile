@@ -7,6 +7,7 @@ DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "release/
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
+gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", tag: "v0.15.0"
 
 gem "puma"
 gem "uglifier", ">= 1.3.0"

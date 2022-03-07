@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_08_135695) do
+ActiveRecord::Schema.define(version: 2022_03_07_111947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
-  enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
 
@@ -480,6 +479,14 @@ ActiveRecord::Schema.define(version: 2021_04_08_135695) do
     t.index ["decidim_user_group_id"], name: "index_decidim_endorsements_on_decidim_user_group_id"
     t.index ["resource_type", "resource_id", "decidim_author_type", "decidim_author_id", "decidim_user_group_id"], name: "idx_endorsements_rsrcs_and_authors", unique: true
     t.index ["resource_type", "resource_id"], name: "index_decidim_endorsements_on_resource_type_and_resource_id"
+  end
+
+  create_table "decidim_file_authorization_handler_census_data", force: :cascade do |t|
+    t.bigint "decidim_organization_id"
+    t.string "id_document"
+    t.date "birthdate"
+    t.datetime "created_at", null: false
+    t.index ["decidim_organization_id"], name: "decidim_census_data_org_id_index"
   end
 
   create_table "decidim_follows", force: :cascade do |t|
