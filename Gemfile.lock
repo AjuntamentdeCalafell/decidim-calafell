@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/CodiTramuntana/decidim-file_authorization_handler.git
+  revision: e0424156783758cb039fe031d9b9f1e28b0604ba
+  tag: v0.15.0
+  specs:
+    decidim-file_authorization_handler (0.15.0)
+      decidim (>= 0.15.0)
+      decidim-admin (>= 0.15.0)
+      rails (>= 5.2)
+
+GIT
   remote: https://github.com/decidim/decidim
   revision: 3593e3f1ddeb54b14c54d2dfe84dbc8f19e6d444
   branch: release/0.24-stable
@@ -866,6 +876,7 @@ DEPENDENCIES
   dalli
   decidim!
   decidim-dev!
+  decidim-file_authorization_handler!
   decidim-initiatives!
   execjs (~> 2.7.0)
   faker
