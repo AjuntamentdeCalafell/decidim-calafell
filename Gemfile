@@ -15,6 +15,7 @@ gem "sprockets", "~> 3.7.2"
 gem "geocoder", "~> 1.6.1"
 gem "virtus-multiparams"
 gem "faker"
+gem "wicked_pdf"
 
 gem "execjs", "~> 2.7.0"
 
