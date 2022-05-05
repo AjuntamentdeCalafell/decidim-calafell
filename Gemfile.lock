@@ -415,7 +415,7 @@ GEM
       rest-client (>= 1.6)
     eventmachine (1.2.7)
     eventmachine_httpserver (0.2.1)
-    excon (0.91.0)
+    excon (0.92.3)
     execjs (2.7.0)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
@@ -435,10 +435,10 @@ GEM
       fog-json (~> 1.1)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
-    fog-core (2.2.4)
+    fog-core (2.3.0)
       builder
       excon (~> 0.71)
-      formatador (~> 0.2)
+      formatador (>= 0.2, < 2.0)
       mime-types
     fog-json (1.2.0)
       fog-core
@@ -448,7 +448,7 @@ GEM
     fog-xml (0.1.4)
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
-    formatador (0.3.0)
+    formatador (1.1.0)
     foundation-rails (6.6.2.0)
       railties (>= 3.1.0)
       sass (>= 3.3.0)
@@ -465,7 +465,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.13.11)
+    graphql (1.13.12)
     hashdiff (1.0.1)
     hashie (5.0.0)
     highline (2.0.3)
@@ -623,7 +623,7 @@ GEM
     premailer-rails (1.11.1)
       actionmailer (>= 3)
       premailer (~> 1.7, >= 1.7.9)
-    public_suffix (4.0.6)
+    public_suffix (4.0.7)
     puffing-billy (2.4.1)
       addressable (~> 2.5)
       em-http-request (~> 1.1, >= 1.1.0)
@@ -636,7 +636,7 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
-    rack-attack (6.6.0)
+    rack-attack (6.6.1)
       rack (>= 1.0, < 3)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
