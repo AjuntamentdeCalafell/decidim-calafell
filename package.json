@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "decidim-calafell",
   "private": true,
   "dependencies": {
     "@decidim/browserslist-config": "file:packages/browserslist-config",
