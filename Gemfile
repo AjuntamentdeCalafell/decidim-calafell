@@ -39,6 +39,7 @@ end
 
 group :production do
   gem 'fog-aws'
+  gem "aws-sdk-s3", require: false
   gem 'dalli'
   gem 'sendgrid-ruby'
   gem 'newrelic_rpm'
