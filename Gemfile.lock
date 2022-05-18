@@ -506,11 +506,6 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
-    lograge (0.12.0)
-      actionpack (>= 4)
-      activesupport (>= 4)
-      railties (>= 4)
-      request_store (~> 1.0)
     loofah (2.3.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -853,7 +848,6 @@ DEPENDENCIES
   geocoder (~> 1.6.1)
   letter_opener_web
   listen (~> 3.1.0)
-  lograge
   newrelic_rpm
   nokogiri (= 1.13.3)
   puma
