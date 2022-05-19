@@ -539,7 +539,7 @@ GEM
     newrelic_rpm (8.7.0)
     nio4r (2.5.8)
     nobspw (0.6.2)
-    nokogiri (1.13.3)
+    nokogiri (1.13.5)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     oauth (0.5.10)
@@ -849,7 +849,7 @@ DEPENDENCIES
   letter_opener_web
   listen (~> 3.1.0)
   newrelic_rpm
-  nokogiri (= 1.13.3)
+  nokogiri (= 1.13.5)
   puma
   rspec-rails
   sendgrid-ruby
