@@ -197,9 +197,10 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-verify_wo_registration
-  revision: c490c5f14f7095df1aa8c9a022be317dab973f4f
+  revision: b372e31b1cf03ab030c13aca570e9120390f02c8
+  tag: v0.0.2
   specs:
-    decidim-verify_wo_registration (0.0.1)
+    decidim-verify_wo_registration (0.0.2)
       decidim-budgets (>= 0.20)
       decidim-core (>= 0.20)
       decidim-proposals (>= 0.20)
