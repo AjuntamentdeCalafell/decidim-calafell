@@ -195,6 +195,16 @@ GIT
       decidim-admin (~> 0.25.2)
       rails (>= 5.2)
 
+GIT
+  remote: https://github.com/CodiTramuntana/decidim-verify_wo_registration
+  revision: b372e31b1cf03ab030c13aca570e9120390f02c8
+  tag: v0.0.2
+  specs:
+    decidim-verify_wo_registration (0.0.2)
+      decidim-budgets (>= 0.20)
+      decidim-core (>= 0.20)
+      decidim-proposals (>= 0.20)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -842,6 +852,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-file_authorization_handler!
   decidim-initiatives!
+  decidim-verify_wo_registration!
   execjs (~> 2.7.0)
   faker
   fog-aws
