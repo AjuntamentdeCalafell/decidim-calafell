@@ -1,0 +1,5 @@
+vendor/bundle/ruby/*.*.*/gems/wkhtmltopdf-binary-*/bin/wkhtmltopdf_macos_cocoa.gz
+vendor/bundle/ruby/*.*.*/gems/wkhtmltopdf-binary-*/bin/wkhtmltopdf_ubuntu_1*
+vendor/bundle/ruby/*.*.*/gems/wkhtmltopdf-binary-*/bin/wkhtmltopdf_archlinux*
+vendor/bundle/ruby/*.*.*/gems/wkhtmltopdf-binary-*/bin/wkhtmltopdf_centos*
+vendor/bundle/ruby/*.*.*/gems/wkhtmltopdf-binary-*/bin/wkhtmltopdf_debian_*
