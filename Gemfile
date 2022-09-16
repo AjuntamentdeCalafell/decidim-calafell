@@ -8,7 +8,7 @@ DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "r
 gem "decidim", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", tag: "v0.25.2"
-gem "decidim-verify_wo_registration", git: "https://github.com/CodiTramuntana/decidim-verify_wo_registration", tag: "v0.0.2"
+# gem "decidim-verify_wo_registration", git: "https://github.com/CodiTramuntana/decidim-verify_wo_registration", tag: "v0.0.2"
 
 gem "puma"
 gem "uglifier", ">= 1.3.0"
@@ -28,6 +28,8 @@ group :development, :test do
   gem "decidim-dev", DECIDIM_VERSION
   gem "faker"
   gem "rspec-rails"
+  # Load Environment variables through an .env file
+  gem "dotenv-rails", "~> 2.7.5"
 end
 
 group :development do
