@@ -2,7 +2,7 @@
 
 Decidim.configure do |config|
   config.application_name = 'Decidim Calafell'
-  config.mailer_sender = 'pciutadana@calafell.org'
+  config.mailer_sender = 'web@calafell.org'
 
   # Change these lines to set your preferred locales
   config.default_locale = :ca
