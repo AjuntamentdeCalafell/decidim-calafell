@@ -49,7 +49,7 @@ Decidim.configure do |config|
     config.base_uploads_path = ENV['HEROKU_APP_NAME'] + '/'
   end
 
-  config.sms_gateway_service = "SmsGateway" if Rails.application.secrets.sms.values.all?(&:present?)
+  config.sms_gateway_service = "ParlemSmsGateway"
 end
 
 # Inform Decidim about the assets folder

@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 require "rails_helper"
 
-describe SmsGateway do
+describe InnovaTelecomSmsGateway do
   let(:subject) { gateway }
   let(:gateway) { described_class.new(mobile_phone_number, code) }
   let(:mobile_phone_number) { "600102030" }

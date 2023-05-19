@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # A Service to send SMS to Calafell's provider so users can be verified by SMS.
-class SmsGateway
+class InnovaTelecomSmsGateway
   attr_reader :mobile_phone_number, :code
 
   def initialize(mobile_phone_number, code)

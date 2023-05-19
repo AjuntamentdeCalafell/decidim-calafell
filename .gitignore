@@ -28,3 +28,5 @@ node_modules/
 
 public/decidim-packs/
 storage/
+
+config/application.yml
