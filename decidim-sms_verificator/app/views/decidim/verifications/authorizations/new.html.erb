@@ -14,10 +14,10 @@
               <% if lookup_context.exists?(handler.to_partial_path, [], true) %>
                 <%= render partial: handler.to_partial_path, locals: { handler: handler, form: form } %>
               <% else %>
-                <%= form.all_fields %>
+                <%= render partial: "sms_form", locals: { form: form } %>
               <% end %>
-fdasdfasdf
-              <div class="actions">
+
+              <div class="actions send-authorization">
                 <%= form.submit t(".authorize"), class: "button expanded" %>
               </div>
             <% end %>
