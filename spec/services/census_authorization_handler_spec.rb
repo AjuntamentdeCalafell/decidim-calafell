@@ -32,7 +32,7 @@ describe CensusAuthorizationHandler do
   end
 
   before do
-    stub_request(:get, /census\.url/)
+    stub_request(:get, /example.net\/census\/url/)
       .with(
         query: {
           postal_code: postal_code,
