@@ -26,7 +26,7 @@ gem "execjs", "~> 2.7.0"
 
 group :development, :test do
   gem "byebug", platform: :mri
-
+  gem "decidim-dev", DECIDIM_VERSION
   gem "faker"
   gem "rspec-rails"
   # Load Environment variables through an .env file
