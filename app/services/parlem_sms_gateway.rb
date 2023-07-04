@@ -10,27 +10,31 @@ class ParlemSmsGateway
   end
 
   def deliver_code
-    if response.xpath("//Fault").present? || response.to_s.include?("NOK")
-      report_error
-      false
-    else
-      true
-    end
+    true
+    # if response[:error].present?
+    #   report_error
+    #   false
+    # else
+    #   true
+    # end
   end
 
   def response
     return @response if defined?(@response)
 
-    connection = Faraday.new(Rails.application.secrets.sms.fetch(:service_url))
-    response = connection.post do |request|
-      request.headers["SOAPAction"] = ""
-      request.headers["Content-Type"] = "text/xml"
-      request.body = request_body
-    end
+    # POST https://api.sms.parlem.com/v1/push/simple
 
-    @response ||= Nokogiri::XML(response.body).remove_namespaces!
+    # parlem_base_url = https://api.sms.parlem.com/v1
+    # TODO: WS to send SMS with parlem
+
+    return true
+    # connection = Faraday.new("#{Rails.application.secrets.sms.fetch(:parlem_base_url)}/push/simple")
+    # response = connection.post do |request|
+    #   request.body = request_body
+    # end
+
+    # @response ||= Nokogiri::XML(response.body).remove_namespaces!
   end
-
 
   def text
     I18n.t("decidim.sms.text", code: code)
@@ -45,22 +49,10 @@ class ParlemSmsGateway
   end
 
   def request_body
-    @request_body ||= <<EOS
-<?xml version="1.0" standalone="no"?>
-    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://envios.rbs.innovatelecom.org">
-     <soapenv:Body>
-        <env:enviosms2>
-           <env:sCodigoCuenta>#{Rails.application.secrets.sms.fetch(:username)}</env:sCodigoCuenta>
-           <env:sClaveCuenta>#{Rails.application.secrets.sms.fetch(:password)}</env:sClaveCuenta>
-           <env:sCodigoCanal>#{Rails.application.secrets.sms.fetch(:service_id)}</env:sCodigoCanal>
-           <env:sNumeroDestino>#{mobile_phone_number}</env:sNumeroDestino>
-           <env:sContenido>#{text}</env:sContenido>
-           <env:iPermanencia>10000</env:iPermanencia>
-           <env:bEmergente>0</env:bEmergente>
-           <env:bAcuse>0</env:bAcuse>
-        </env:enviosms2>
-       </soapenv:Body>
-    </soapenv:Envelope>
-EOS
+    {
+      configuration_name: "nombre_api",
+      message: "Código de verificación por SMS: #{code}",
+      numbers: "34#{mobile_phone_number}"
+    }
   end
 end

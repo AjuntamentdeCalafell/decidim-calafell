@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2022_05_11_085258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
-  enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
 

@@ -3,12 +3,15 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.25-stable" }
+# DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.25-stable" }
+DECIDIM_VERSION = { path: "/home/laurajv/decidim_fork" }
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
-gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", tag: "v0.25.2"
+# gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", tag: "v0.25.2"
 # gem "decidim-verify_wo_registration", git: "https://github.com/CodiTramuntana/decidim-verify_wo_registration", tag: "v0.0.2"
+# gem "decidim-verify_wo_registration", path: "/home/laurajv/decidim-verify_wo_registration"
+gem 'decidim-sms_verificator', path: '.'
 
 gem "puma"
 gem "uglifier", ">= 1.3.0"

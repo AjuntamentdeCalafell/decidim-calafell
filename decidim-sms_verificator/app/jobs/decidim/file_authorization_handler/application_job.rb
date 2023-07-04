@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Decidim
-  module FileAuthorizationHandler
+  module SmsVerificator
     class ApplicationJob < ActiveJob::Base
     end
   end
