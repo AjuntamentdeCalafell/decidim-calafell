@@ -2,7 +2,7 @@
 
 module Decidim
   module SmsVerificator
-    DECIDIM_VERSION = "0.25.2"
+    DECIDIM_VERSION = "0.26.2"
     VERSION = "0.0.1"
   end
 end
