@@ -1,0 +1,6 @@
+en:
+  activemodel:
+    attributes:
+      sms_verifier_handler:
+        mobile_phone_number: Mobile phone number
+        verification_code: Verification code

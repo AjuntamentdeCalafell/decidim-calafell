@@ -30,3 +30,7 @@ public/decidim-packs/
 storage/
 
 config/application.yml
+
+.rake_tasks~
+
+decidim-sms_verifier/spec/decidim_dummy_app/
