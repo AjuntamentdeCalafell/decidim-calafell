@@ -33,4 +33,4 @@ config/application.yml
 
 .rake_tasks~
 
-decidim-sms_verifier/spec/decidim_dummy_app/
+decidim-verifications-sms_direct/spec/decidim_dummy_app/

@@ -10,7 +10,7 @@ gem "decidim-cdtb", path: "/home/oliver/prog/decidim/modules/decidim-cdtb"
 gem "decidim-initiatives", DECIDIM_VERSION
 # gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", tag: "v0.26.2.7"
 gem "decidim-verify_wo_registration", git: "https://github.com/CodiTramuntana/decidim-verify_wo_registration", tag: "v0.0.2"
-gem 'decidim-sms_verifier', path: '.'
+gem 'decidim-verifications-sms_direct', path: '.'
 
 gem "puma"
 gem "uglifier", ">= 1.3.0"
