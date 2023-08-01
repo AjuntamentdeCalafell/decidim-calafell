@@ -28,3 +28,6 @@ node_modules/
 
 public/decidim-packs/
 storage/
+
+public/sw.js
+public/sw.js.map
