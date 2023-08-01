@@ -14,6 +14,8 @@ gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntan
 gem "psych", "< 3"
 
 gem "puma"
+gem "matrix"
+
 gem "uglifier", ">= 1.3.0"
 gem "virtus-multiparams"
 gem "wicked_pdf"

@@ -879,6 +879,7 @@ DEPENDENCIES
   fog-aws
   letter_opener_web
   listen
+  matrix
   newrelic_rpm
   nokogiri (= 1.13.3)
   psych (< 3)
