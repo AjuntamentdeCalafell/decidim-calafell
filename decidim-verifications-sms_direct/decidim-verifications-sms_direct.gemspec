@@ -25,12 +25,13 @@ Gem::Specification.new do |s|
   # rubocop: enable Lint/ConstantDefinitionInBlock
 
   s.add_dependency "decidim", DECIDIM_VERSION
+  s.add_dependency "decidim-core", DECIDIM_VERSION
   s.add_dependency "decidim-admin", DECIDIM_VERSION
+  s.add_dependency "decidim-verifications", DECIDIM_VERSION
   s.add_dependency "rails", ">= 5.2"
 
   s.add_development_dependency "decidim-cdtb"
   s.add_development_dependency "decidim-dev", DECIDIM_VERSION
   s.add_development_dependency "faker"
   s.add_development_dependency "letter_opener_web", "~> 1.3.3"
-  s.add_development_dependency "listen"
 end

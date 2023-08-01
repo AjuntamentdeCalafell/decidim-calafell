@@ -150,6 +150,8 @@ PATH
     decidim-verifications-sms_direct (0.0.1)
       decidim (~> 0.26.2)
       decidim-admin (~> 0.26.2)
+      decidim-core (~> 0.26.2)
+      decidim-verifications (~> 0.26.2)
       rails (>= 5.2)
 
 PATH

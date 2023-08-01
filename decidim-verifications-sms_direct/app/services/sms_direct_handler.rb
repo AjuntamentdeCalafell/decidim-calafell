@@ -8,16 +8,16 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
   attribute :verification_code, String
 
   validates :mobile_phone_number, :verification_code, :sms_gateway, presence: true
-  validates :verification_code, presence: true
+  validate :authorization_code_is_the_same!
 
   def handler_name
-    +"sms"
+    +"sms_direct"
   end
 
   # A mobile phone can only be verified once but it should be private.
   def unique_id
     Digest::MD5.hexdigest(
-      "#{organization}-#{mobile_phone_number}-#{Rails.application.secrets.secret_key_base}"
+      "#{organization.id}-#{mobile_phone_number}-#{Rails.application.secrets.secret_key_base}"
     )
   end
 
@@ -36,7 +36,6 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
     }
   end
 
-  private
 
   # Returns the verification code.
   # If the attribute is alredy set, returns it.
@@ -47,10 +46,12 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
     @verification_code||= begin
       generated_code= generate_code!
 
-      return unless sms_gateway.new(mobile_phone_number, generate_code!).deliver_code
+      return unless sms_gateway.new(mobile_phone_number, generated_code).deliver_code
       generated_code
     end
   end
+
+  private
 
   def sms_gateway
     Decidim.sms_gateway_service.to_s.constantize
@@ -61,6 +62,14 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
   end
 
   def organization
-    current_organization || user&.organization || scope&.organization
+    current_organization || user&.organization
+  end
+
+  def authorization_code_is_the_same!
+    auth= Decidim::Authorization.find_by(user: user, name: "sms_direct")
+
+    unless auth&.metadata&.dig("verification_code") == @verification_code
+      errors.add(:verification_code, "Unexpected verification_code")
+    end
   end
 end

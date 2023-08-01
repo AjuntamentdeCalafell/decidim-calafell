@@ -11,7 +11,7 @@ module Decidim
         isolate_namespace Decidim::Verifications::SmsDirect
 
         routes do
-          post "sms_codes/:phone_num", to: "sms_codes#create"
+          post "sms_codes", to: "sms_codes#create"
         end
 
         # Won't start if the sms gateway is not set.
