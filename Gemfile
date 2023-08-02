@@ -13,6 +13,8 @@ gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntan
 # temporal solution while gems embrace new psych 4 (the default in Ruby 3.1) behavior.
 gem "psych", "< 4"
 
+gem "seven_zip_ruby", git: "https://github.com/andrewhamon/seven_zip_ruby", branch: "ah/install-so-in-gem-lib"
+
 gem "puma"
 gem "matrix"
 
