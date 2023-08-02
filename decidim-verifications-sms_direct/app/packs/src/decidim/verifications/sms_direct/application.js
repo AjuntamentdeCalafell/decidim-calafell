@@ -1,21 +1,19 @@
 $(() => {
-  const verificationCodeInput = document.querySelector('#authorization_handler_verification_code');
-  const mobilePhoneInput = document.querySelector('#authorization_handler_mobile_phone_number');
+  const mobilePhoneInput = document.querySelectorAll('#authorization-handler-sms_direct input')[0];
+  const verificationCodeInput = document.querySelectorAll('#authorization-handler-sms_direct input')[1];
   verificationCodeInput.disabled = true;
 
   const sendSmsCodeButton = document.querySelector('.send-sms-code');
-  const sendAuthorizationButton = document.querySelector('.send-authorization');
   
   sendSmsCodeButton.addEventListener('click', function() {
     sendSmsCodeButton.style.display = 'none';
     mobilePhoneInput.disabled = true;
-    sendAuthorizationButton.style.display = 'block';
 
-    const mobilePhoneNumberInput = document.querySelector('#authorization_handler_mobile_phone_number');
-    let mobilePhoneNumber = mobilePhoneNumberInput.value;
+    let mobilePhoneNumber = mobilePhoneInput.value;
+    alert("Validate phone number with regexp")
 
     let request = new XMLHttpRequest();
-    var url = `/sms_codes/send_code/${mobilePhoneNumber}`;
+    var url = `/verifications_sms_direct/sms_codes?phone_num=${mobilePhoneNumber}`;
     request.open("POST", url, true);
  
     request.onreadystatechange = function () {
@@ -27,17 +25,4 @@ $(() => {
   
     request.send();
   });
-
-  sendAuthorizationButton.addEventListener('click', function() {
-    sendAuthorizationButton.disabled = true;
-
-    let verificationCode = verificationCodeInput.value;
-
-    let request = new XMLHttpRequest();
-    var url = `/sms_codes/create/${verificationCode}`;
-    console.log(url)
-    request.open("POST", url, true);
-
-    // request.send();
-  })
 });

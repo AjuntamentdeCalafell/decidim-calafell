@@ -17,6 +17,13 @@ And then execute:
 bundle install
 ```
 
+Finally install the required migrations:
+
+```bash
+bin/rake decidim_verifications_sms_direct:install:migrations
+bin/rake db:migrate
+```
+
 ## Configuration
 
 Once installed, the following env variables can be configured:

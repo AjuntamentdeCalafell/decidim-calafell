@@ -52,24 +52,20 @@ describe SmsDirectHandler do
       end
     end
 
-    describe 'verification_code' do
-      context "when sending the SMS fails" do
-        let(:verification_code) { nil }
-
-        before do
-          @previous_gateway= Decidim.sms_gateway_service
-          Decidim.sms_gateway_service= FailingGateway.name
-        end
-        after do
-          Decidim.sms_gateway_service= @previous_gateway
-        end
-
-        it { is_expected.not_to be_valid }
+    context "when sending the SMS fails" do
+      before do
+        @previous_gateway= Decidim.sms_gateway_service
+        Decidim.sms_gateway_service= FailingGateway.name
+      end
+      after do
+        Decidim.sms_gateway_service= @previous_gateway
       end
 
-      context 'when sending the SMS succeeds' do
-        it { is_expected.to be_invalid }
-      end
+      it { is_expected.not_to be_valid }
+    end
+
+    context 'when sending the SMS succeeds' do
+      it { is_expected.to be_invalid }
     end
 
   end
@@ -104,28 +100,36 @@ describe SmsDirectHandler do
   end
 
   describe "when validating the code from the user" do
-    let(:verification_code) { "ANYc0d3"}
 
-    context "when a pending authorization exists" do
-      let!(:authorization) do
-        Decidim::Authorization.create!(user: user, name: "sms_direct", metadata: handler.verification_metadata)
+    context "when a phone code was sent" do
+      let(:generated_code) { "ANYc0d3"}
+      let!(:phone_code) do
+        Decidim::Verifications::SmsDirect::PhoneCode.create!(organization: user.organization, phone_number: mobile_phone_number, code: generated_code)
       end 
-        
+
       context "when the code is the same" do
-        it { is_expected.to be_valid }        
+        let(:verification_code) { generated_code }
+
+        it { is_expected.to be_valid } 
       end
 
-      context "when the code is different" do
-        it "should be invalid" do
-          handler.verification_code= "FAILINGc0d3"
+      context "when there is a PhoneCode but the given code is different" do
+        let(:verification_code) { "FAILINGc0d3" }
 
-          expect(handler).to be_invalid
-        end
+        it { is_expected.to be_invalid }
       end
     end
 
-    context "when there is no authorization for the current user" do
-      it { is_expected.to be_invalid }
+    context "when there is no PhoneCode in the DB" do
+      it "should be invalid with an empty code" do
+        expect(handler).to be_invalid
+      end
+
+      context "with any code" do
+        let(:verification_code) { "Otherc0d3" }
+
+        it { is_expected.to be_invalid }
+      end
     end
   end
 end

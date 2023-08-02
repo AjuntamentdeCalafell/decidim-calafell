@@ -4,32 +4,26 @@ module Decidim
       class SmsCodesController < ApplicationController
         skip_before_action :verify_authenticity_token
 
-        # def send_code
+        # 
         def create
           phone_num = params[:phone_num]
 
           handler = ::SmsDirectHandler.from_params({mobile_phone_number: phone_num, user: current_user})
+          handler.generate_and_send_code
           metadata = handler.verification_metadata
 
-          authorization.metadata = metadata
-          authorization.save!
-
-          render json: { metadata: metadata }
-        end
-
-        private
-
-        def authorization
-          @authorization ||= Decidim::Authorization.find_or_initialize_by(
-            user: current_user,
-            name: "sms_direct"
+          phone_code= Decidim::Verifications::SmsDirect::PhoneCode.find_or_initialize_by(
+            organization: current_organization,
+            phone_number: phone_num
           )
-        end
+          phone_code.code = metadata[:verification_code]
 
-        def sms_gateway
-          Decidim.sms_gateway_service.to_s.constantize
+          if phone_code.save
+            render json: { phone_number: phone_code.phone_number }
+          else
+            render json: { error: phone_code.full_messages }
+          end
         end
-
       end
     end
   end

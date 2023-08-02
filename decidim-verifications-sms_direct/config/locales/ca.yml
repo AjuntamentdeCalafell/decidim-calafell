@@ -2,10 +2,13 @@ ca:
   activemodel:
     attributes:
       sms_direct_handler:
-        mobile_phone_number: Número de telefono
+        mobile_phone_number: Número de telèfon
         verification_code: Codi de verificació
   decidim:
     authorization_handlers:
       sms_direct:
         explanation: Introdueix el teu número de telèfon mòbil per poder verificar la teva identitat.
-        name: Codi per SMS (Directe)
+        name: Codi per SMS
+  sms_direct:
+    form:
+      ask_code: Envia'm un codi per SMS

@@ -21,16 +21,18 @@ RSpec.describe Decidim::Verifications::SmsDirect::SmsCodesController, type: :con
   end
 
   describe "POST #send_code" do
-    let(:phone_number) { 600000000 }
+    let(:phone_number) { "600000000" }
 
     it "returns succeeds" do
       post :create, params: {phone_num: phone_number}
       expect(response).to have_http_status(:success)
 
-      auth= Decidim::Authorization.find_by(user: user, name: "sms_direct")
-      expect(auth).to be_present
-      expect(auth.unique_id).to be_nil
-      expect(JSON.parse(response.body)['metadata']).to include(auth.metadata)
+      phone_code= Decidim::Verifications::SmsDirect::PhoneCode.inside(organization).last
+      expect(phone_code).to be_present
+      expect(phone_code.phone_number).to eq(phone_number)
+      expect(phone_code.code).to be_present
+      expect(phone_code).to be_present
+      expect(JSON.parse(response.body)['phone_number']).to eq(phone_number)
     end
   end
 end

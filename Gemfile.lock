@@ -183,6 +183,16 @@ GIT
       decidim-core (= 0.26.5)
 
 GIT
+  remote: https://github.com/CodiTramuntana/decidim-file_authorization_handler.git
+  revision: 61b24b67bf73c554942759c91e692c1104e781a7
+  tag: v0.26.2.7
+  specs:
+    decidim-file_authorization_handler (0.26.4.7)
+      decidim (~> 0.26.4)
+      decidim-admin (~> 0.26.4)
+      rails (>= 5.2)
+
+GIT
   remote: https://github.com/CodiTramuntana/decidim-verify_wo_registration
   revision: b372e31b1cf03ab030c13aca570e9120390f02c8
   tag: v0.0.2
@@ -865,6 +875,7 @@ DEPENDENCIES
   decidim!
   decidim-cdtb!
   decidim-dev!
+  decidim-file_authorization_handler!
   decidim-initiatives!
   decidim-verifications-sms_direct!
   decidim-verify_wo_registration!

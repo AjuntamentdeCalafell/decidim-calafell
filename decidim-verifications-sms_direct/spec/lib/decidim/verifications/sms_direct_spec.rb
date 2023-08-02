@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe Decidim::Verifications::SmsDirect do
+describe Decidim::Verifications::SmsDirect do
 
   describe "workflow" do
     let(:workflow) { Decidim.authorization_workflows.find {|wf| wf.name == "sms_direct"} }

@@ -1,0 +1,8 @@
+<%= form.input("mobile_phone_number") %>
+<div class="actions">
+  <%= link_to t("sms_direct.form.ask_code"), "#", id: "send-sms-code", class: "button expanded send-sms-code"%>
+</div>
+
+<%= form.input("verification_code", class: "verification-code-input") %>
+
+<%= javascript_pack_tag "decidim_verifications_sms_direct" %>

@@ -8,7 +8,7 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
   attribute :verification_code, String
 
   validates :mobile_phone_number, :verification_code, :sms_gateway, presence: true
-  validate :authorization_code_is_the_same!
+  validate :verification_code_is_correct!
 
   def handler_name
     +"sms_direct"
@@ -36,19 +36,13 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
     }
   end
 
-
-  # Returns the verification code.
-  # If the attribute is alredy set, returns it.
-  # If the attribute is empty, generates and sends it via SMS gateway.
-  def verification_code
+  # Generates the verification_code and sends it via Decidim's SMS Gateway.
+  def generate_and_send_code
     return unless sms_gateway
     
-    @verification_code||= begin
-      generated_code= generate_code!
+    @verification_code= generate_code!
 
-      return unless sms_gateway.new(mobile_phone_number, generated_code).deliver_code
-      generated_code
-    end
+    return unless sms_gateway.new(mobile_phone_number, @verification_code).deliver_code
   end
 
   private
@@ -65,10 +59,10 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
     current_organization || user&.organization
   end
 
-  def authorization_code_is_the_same!
-    auth= Decidim::Authorization.find_by(user: user, name: "sms_direct")
+  def verification_code_is_correct!
+    phone_code= Decidim::Verifications::SmsDirect::PhoneCode.inside(user&.organization || current_organization).find_by(phone_number: mobile_phone_number)
 
-    unless auth&.metadata&.dig("verification_code") == @verification_code
+    if phone_code.nil? || phone_code.code != @verification_code
       errors.add(:verification_code, "Unexpected verification_code")
     end
   end
