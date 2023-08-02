@@ -15,6 +15,11 @@ module DecidimCalafell
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    # Tried to load unspecified class: Symbol
+    # Error in Sidekiq with psych gem
+    # https://stackoverflow.com/questions/74312283/tried-to-load-unspecified-class-activesupporttimewithzone-psychdisallowed
+    # config.active_record.yaml_column_permitted_classes = [Symbol]
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
