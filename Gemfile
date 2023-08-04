@@ -11,9 +11,13 @@ gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntan
 # gem "decidim-verify_wo_registration", git: "https://github.com/CodiTramuntana/decidim-verify_wo_registration", tag: "v0.0.2"
 
 # temporal solution while gems embrace new psych 4 (the default in Ruby 3.1) behavior.
-gem "psych", "< 3"
+gem "psych", "< 4"
+
+gem "seven_zip_ruby", git: "https://github.com/andrewhamon/seven_zip_ruby", branch: "ah/install-so-in-gem-lib"
 
 gem "puma"
+gem "matrix"
+
 gem "uglifier", ">= 1.3.0"
 gem "virtus-multiparams"
 gem "wicked_pdf"
