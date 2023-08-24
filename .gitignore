@@ -33,4 +33,10 @@ config/application.yml
 
 .rake_tasks~
 
-decidim-verifications-sms_direct/spec/decidim_dummy_app/
+decidim_dummy_app/
+
+decidim-verifications-sms_direct/.byebug_history
+decidim-verifications-sms_direct/.rake_tasks~
+decidim-verifications-sms_direct/.rspec-failures
+decidim-verifications-sms_direct/.rspec_status
+decidim-verifications-sms_direct/spec/

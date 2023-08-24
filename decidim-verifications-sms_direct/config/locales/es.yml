@@ -12,3 +12,4 @@ es:
   sms_direct:
     form:
       ask_code: Enviar código SMS
+      code_help: Para verificarte pide un código SMS clicando en el botón e indícalo en este campo.

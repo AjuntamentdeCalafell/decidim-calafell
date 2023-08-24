@@ -7,7 +7,7 @@ $(() => {
   
   sendSmsCodeButton.addEventListener('click', function() {
     sendSmsCodeButton.style.display = 'none';
-    mobilePhoneInput.disabled = true;
+    mobilePhoneInput.readOnly = true;
 
     let mobilePhoneNumber = mobilePhoneInput.value;
     alert("Validate phone number with regexp")

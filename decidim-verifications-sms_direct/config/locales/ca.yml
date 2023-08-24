@@ -12,3 +12,4 @@ ca:
   sms_direct:
     form:
       ask_code: Envia'm un codi per SMS
+      code_help: Per tal de verificar-te demana un codi SMS clicant al botó i indica'l en aquest camp.

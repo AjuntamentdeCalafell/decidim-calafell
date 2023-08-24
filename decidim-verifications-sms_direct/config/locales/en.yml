@@ -12,3 +12,4 @@ en:
   sms_direct:
     form:
       ask_code: Send the SMS
+      code_help: In order to get verified, ask for an SMS code by clicking on the button and write it in this field.

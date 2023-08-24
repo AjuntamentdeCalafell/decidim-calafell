@@ -28,11 +28,10 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
     super.gsub(/[^+0-9]/, "")
   end
 
-  # The verification metadata to validate in the next step.
-  def verification_metadata
+  # The metadata.
+  def metadata
     {
-      verification_code: verification_code,
-      code_sent_at: Time.current
+      phone_number: mobile_phone_number,
     }
   end
 
@@ -43,6 +42,8 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
     @verification_code= generate_code!
 
     return unless sms_gateway.new(mobile_phone_number, @verification_code).deliver_code
+
+    @verification_code
   end
 
   private
