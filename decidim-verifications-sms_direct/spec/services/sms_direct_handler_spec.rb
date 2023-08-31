@@ -40,7 +40,7 @@ describe SmsDirectHandler do
         let(:mobile_phone_number) { nil }
 
         it "should raise error" do
-          expect(handler.errors.keys).to include(:mobile_phone_number)
+          expect(handler.errors.attribute_names).to include(:mobile_phone_number)
         end
       end
 
@@ -48,7 +48,7 @@ describe SmsDirectHandler do
         let(:mobile_phone_number) { '-----' }
 
         it "should raise error" do
-          expect(handler.errors.keys).to include(:mobile_phone_number)
+          expect(handler.errors.attribute_names).to include(:mobile_phone_number)
         end
       end
 
@@ -56,7 +56,7 @@ describe SmsDirectHandler do
         let(:mobile_phone_number) { '000000000' }
 
         it "should raise error" do
-          expect(handler.errors.keys).to include(:mobile_phone_number)
+          expect(handler.errors.attribute_names).to include(:mobile_phone_number)
         end
       end
 
@@ -64,7 +64,7 @@ describe SmsDirectHandler do
         let(:mobile_phone_number) { '666121212' }
 
         it "should not raise error" do
-          expect(handler.errors.keys).to_not include(:mobile_phone_number)
+          expect(handler.errors.attribute_names).to_not include(:mobile_phone_number)
         end
       end
     end

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "decidim/cdtb/tasks"
-
 namespace :parlem do
   desc <<~EODESC
     Sends an SMS fake code or message to the given phone number (with 34 prefix)

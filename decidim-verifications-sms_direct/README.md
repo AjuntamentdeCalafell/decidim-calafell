@@ -50,6 +50,10 @@ Create a dummy app in your application (if not present):
 
 ```bash
 bin/rails decidim:generate_external_test_app
+cd spec/decidim_dummy_app
+bundle exec rake  decidim_verifications_sms_direct:install:migrations
+bundle exec rake db:migrate RAILS_ENV=test
+cd ../..
 ```
 
 And run tests:

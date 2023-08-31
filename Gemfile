@@ -6,7 +6,7 @@ ruby RUBY_VERSION
 DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.27-stable" }
 
 gem "decidim", DECIDIM_VERSION
-gem "decidim-cdtb", path: "/home/oliver/prog/decidim/modules/decidim-cdtb"
+gem "decidim-cdtb", git: "https://github.com/CodiTramuntana/decidim-module-cdtb.git"
 gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", tag: "v0.27.1.2"
 gem "decidim-verify_wo_registration", git: "https://github.com/CodiTramuntana/decidim-verify_wo_registration", tag: "v0.0.2"

@@ -41,11 +41,11 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
   def generate_and_send_code
     return unless sms_gateway
     
-    @verification_code= generate_code!
+    verification_code= generate_code!
 
-    return unless sms_gateway.new(mobile_phone_number, @verification_code).deliver_code
+    return unless sms_gateway.new(mobile_phone_number, verification_code).deliver_code
 
-    @verification_code
+    verification_code
   end
 
   def self.normalize_phone_number(number)
@@ -71,7 +71,7 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
   def verification_code_is_correct!
     phone_code= Decidim::Verifications::SmsDirect::PhoneCode.inside(user&.organization || current_organization).find_by(phone_number: SmsDirectHandler.normalize_phone_number(mobile_phone_number))
 
-    if phone_code.nil? || phone_code.code != @verification_code
+    if phone_code.nil? || phone_code.code != verification_code
       errors.add(:verification_code, "Unexpected verification_code")
     end
   end

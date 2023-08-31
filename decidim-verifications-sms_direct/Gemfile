@@ -14,6 +14,9 @@ gemspec
 
 DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.27-stable" }
 
+# temporal solution while gems embrace new psych 4 (the default in Ruby 3.1) behavior.
+gem "psych", "< 4"
+
 group :development, :test do
   gem "bootsnap", require: false
   gem "decidim", DECIDIM_VERSION
