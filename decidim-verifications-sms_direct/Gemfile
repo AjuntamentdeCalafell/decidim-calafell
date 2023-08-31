@@ -12,7 +12,7 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.26-stable" }
+DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.27-stable" }
 
 group :development, :test do
   gem "bootsnap", require: false
@@ -23,5 +23,5 @@ group :development, :test do
 end
 
 group :development do
-  gem "rubocop", "~> 0.92.0"
+  gem "rubocop", "~> 1.28.0"
 end
