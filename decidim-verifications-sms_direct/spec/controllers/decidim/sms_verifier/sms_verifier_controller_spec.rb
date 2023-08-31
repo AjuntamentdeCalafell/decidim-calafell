@@ -29,10 +29,10 @@ RSpec.describe Decidim::Verifications::SmsDirect::SmsCodesController, type: :con
 
       phone_code= Decidim::Verifications::SmsDirect::PhoneCode.inside(organization).last
       expect(phone_code).to be_present
-      expect(phone_code.phone_number).to eq(phone_number)
+      expect(phone_code.phone_number).to eq("+34600000000")
       expect(phone_code.code).to be_present
       expect(phone_code).to be_present
-      expect(JSON.parse(response.body)['phone_number']).to eq(phone_number)
+      expect(JSON.parse(response.body)['phone_number']).to eq("+34600000000")
     end
   end
 end

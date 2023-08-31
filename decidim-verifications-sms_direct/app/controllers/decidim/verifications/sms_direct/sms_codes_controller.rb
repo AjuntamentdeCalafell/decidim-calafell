@@ -6,7 +6,7 @@ module Decidim
 
         # /verifications_sms_direct/sms_codes?phone_num
         def create
-          phone_num = params[:phone_num]
+          phone_num = SmsDirectHandler.normalize_phone_number(params[:phone_num])
 
           handler = ::SmsDirectHandler.from_params({mobile_phone_number: phone_num, user: current_user})
           generated_code= handler.generate_and_send_code

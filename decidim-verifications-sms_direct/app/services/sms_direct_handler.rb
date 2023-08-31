@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "securerandom"
+require "phonelib"
 
 # A form object to be used when public users want to get verified using their phone number.
 class SmsDirectHandler < Decidim::AuthorizationHandler
@@ -8,6 +9,7 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
   attribute :verification_code, String
 
   validates :mobile_phone_number, :verification_code, :sms_gateway, presence: true
+  validates :mobile_phone_number, phone: {countries: :es}
   validate :verification_code_is_correct!
 
   def handler_name
@@ -25,7 +27,7 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
   def mobile_phone_number
     return unless super
 
-    super.gsub(/[^+0-9]/, "")
+    SmsDirectHandler.normalize_phone_number(super)
   end
 
   # The metadata.
@@ -46,7 +48,13 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
     @verification_code
   end
 
+  def self.normalize_phone_number(number)
+    Phonelib.parse(number, :es).e164
+  end
+
+  #------------------------------------------------------------------
   private
+  #------------------------------------------------------------------
 
   def sms_gateway
     Decidim.sms_gateway_service.to_s.constantize
@@ -61,7 +69,7 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
   end
 
   def verification_code_is_correct!
-    phone_code= Decidim::Verifications::SmsDirect::PhoneCode.inside(user&.organization || current_organization).find_by(phone_number: mobile_phone_number)
+    phone_code= Decidim::Verifications::SmsDirect::PhoneCode.inside(user&.organization || current_organization).find_by(phone_number: SmsDirectHandler.normalize_phone_number(mobile_phone_number))
 
     if phone_code.nil? || phone_code.code != @verification_code
       errors.add(:verification_code, "Unexpected verification_code")

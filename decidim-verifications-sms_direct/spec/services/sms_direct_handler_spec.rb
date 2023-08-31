@@ -31,6 +31,7 @@ describe SmsDirectHandler do
     it_behaves_like 'an authorization handler'
 
     before do
+      Phonelib.default_country = "ES"
       handler.valid?
     end
 
@@ -48,6 +49,22 @@ describe SmsDirectHandler do
 
         it "should raise error" do
           expect(handler.errors.keys).to include(:mobile_phone_number)
+        end
+      end
+
+      context "when it can not be a phone number" do
+        let(:mobile_phone_number) { '000000000' }
+
+        it "should raise error" do
+          expect(handler.errors.keys).to include(:mobile_phone_number)
+        end
+      end
+
+      context "when it is a valid phone number" do
+        let(:mobile_phone_number) { '666121212' }
+
+        it "should not raise error" do
+          expect(handler.errors.keys).to_not include(:mobile_phone_number)
         end
       end
     end
@@ -104,7 +121,7 @@ describe SmsDirectHandler do
     context "when a phone code was sent" do
       let(:generated_code) { "ANYc0d3"}
       let!(:phone_code) do
-        Decidim::Verifications::SmsDirect::PhoneCode.create!(organization: user.organization, phone_number: mobile_phone_number, code: generated_code)
+        Decidim::Verifications::SmsDirect::PhoneCode.create!(organization: user.organization, phone_number: SmsDirectHandler.normalize_phone_number(mobile_phone_number), code: generated_code)
       end 
 
       context "when the code is the same" do

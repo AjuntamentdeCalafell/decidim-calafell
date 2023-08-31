@@ -24,11 +24,25 @@ bin/rake decidim_verifications_sms_direct:install:migrations
 bin/rake db:migrate
 ```
 
+Remember to remove the expired codes. To do it see "Clean expired codes" in this document.
+
 ## Configuration
 
-Once installed, the following env variables can be configured:
+To configure the module, the following env variables should be set:
 
-????????????????
+- `SMS_SERVICE_URL`: The base url to the Parlem API, without any path.
+- `SMS_CONFIGURATION_NAME`: The name of the configuration to be used in the fix token.
+- `SMS_API_TOKEN`: The fix token.
+
+### The Parlem SMS API
+
+API documentation can be found at https://sms.parlem.com/docs/ejemplos-api/1026.
+
+This module uses the fix token, not the temporal token.
+
+### Clean expired codes
+
+To clean the expired codes a cron job should be scheduled. This cron must run the sms_direct:clean_expired_codes rake task. It is recommended to schedule the cron once evey night.
 
 ### Run tests
 

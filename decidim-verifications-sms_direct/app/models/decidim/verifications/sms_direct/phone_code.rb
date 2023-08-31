@@ -9,6 +9,8 @@ module Decidim
         belongs_to :organization, foreign_key: :decidim_organization_id,
                                 class_name: "Decidim::Organization"
 
+        before_save :normalize_phone
+
         scope :expired, -> { where("updated_at < ?", Time.zone.now - EXPIRATION_DAYS.days) }
 
         # An organzation scope
@@ -19,6 +21,10 @@ module Decidim
         # Clear all expired codes for all organizations
         def self.clear_expired
           PhoneCode.expired.delete_all
+        end
+
+        def normalize_phone
+          self.phone_number = SmsDirectHandler.normalize_phone_number(phone_number)
         end
       end
     end

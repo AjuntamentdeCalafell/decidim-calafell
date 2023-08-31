@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
   s.add_dependency "decidim-admin", DECIDIM_VERSION
   s.add_dependency "decidim-verifications", DECIDIM_VERSION
   s.add_dependency "rails", ">= 5.2"
+  s.add_dependency "phonelib", ">= 0.8.3"
 
   s.add_development_dependency "decidim-cdtb"
   s.add_development_dependency "decidim-dev", DECIDIM_VERSION

@@ -20,7 +20,6 @@ group :development, :test do
   gem "decidim-cdtb", path: "/home/oliver/prog/decidim/modules/decidim-cdtb"
   gem "letter_opener_web"
   gem "listen"
-
 end
 
 group :development do
