@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_21_050021) do
+ActiveRecord::Schema.define(version: 2023_08_02_102818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
-  enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
 
@@ -1699,6 +1698,16 @@ ActiveRecord::Schema.define(version: 2023_06_21_050021) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["decidim_organization_id"], name: "index_verifications_csv_census_to_organization"
+  end
+
+  create_table "decidim_verifications_sms_direct_phone_codes", force: :cascade do |t|
+    t.bigint "decidim_organization_id", null: false
+    t.string "phone_number"
+    t.string "code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["decidim_organization_id", "phone_number", "code"], name: "idx_sms_direct_primary", unique: true
+    t.index ["decidim_organization_id"], name: "idx_sms_direct_phone_codes_on_org_id"
   end
 
   create_table "oauth_access_grants", force: :cascade do |t|
