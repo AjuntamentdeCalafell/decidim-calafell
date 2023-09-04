@@ -592,7 +592,7 @@ GEM
       net-protocol
     newrelic_rpm (9.4.2)
     nio4r (2.5.9)
-    nokogiri (1.13.3-x86_64-linux)
+    nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     oauth (1.1.0)
       oauth-tty (~> 1.0, >= 1.0.1)
@@ -916,7 +916,7 @@ DEPENDENCIES
   listen
   matrix
   newrelic_rpm
-  nokogiri (= 1.13.3)
+  nokogiri (= 1.13.6)
   psych (< 4)
   puma
   rspec-rails
