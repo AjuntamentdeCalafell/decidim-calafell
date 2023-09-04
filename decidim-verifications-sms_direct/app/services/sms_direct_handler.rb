@@ -43,7 +43,7 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
     
     verification_code= generate_code!
 
-    return unless sms_gateway.new(mobile_phone_number, verification_code).deliver_code
+    return unless sms_gateway.new(mobile_phone_number, code: verification_code).deliver_code
 
     verification_code
   end
