@@ -201,16 +201,6 @@ GIT
       ruby-progressbar
 
 GIT
-  remote: https://github.com/CodiTramuntana/decidim-verify_wo_registration
-  revision: b372e31b1cf03ab030c13aca570e9120390f02c8
-  tag: v0.0.2
-  specs:
-    decidim-verify_wo_registration (0.0.2)
-      decidim-budgets (>= 0.20)
-      decidim-core (>= 0.20)
-      decidim-proposals (>= 0.20)
-
-GIT
   remote: https://github.com/andrewhamon/seven_zip_ruby
   revision: 180f9bdc5a878578f008104c5cef8c025b6eca5e
   branch: ah/install-so-in-gem-lib
@@ -397,6 +387,10 @@ GEM
     db-query-matchers (0.10.0)
       activesupport (>= 4.0, < 7)
       rspec (~> 3.0)
+    decidim-verify_wo_registration (0.2.0)
+      decidim-budgets (>= 0.27)
+      decidim-core (>= 0.27)
+      decidim-proposals (>= 0.27)
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
@@ -913,7 +907,7 @@ DEPENDENCIES
   decidim-file_authorization_handler!
   decidim-initiatives!
   decidim-verifications-sms_direct!
-  decidim-verify_wo_registration!
+  decidim-verify_wo_registration (~> 0.2.0)
   dotenv-rails (~> 2.7.5)
   execjs (~> 2.7.0)
   faker
