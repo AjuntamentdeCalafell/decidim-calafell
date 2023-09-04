@@ -13,7 +13,7 @@ module Decidim
 
         scope :expired, -> { where("updated_at < ?", Time.zone.now - EXPIRATION_DAYS.days) }
 
-        # An organzation scope
+        # An organization scope
         def self.inside(organization)
           where(decidim_organization_id: organization.id)
         end

@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.authors = ["Laura Jaime", "Oliver Valls"]
   s.email = ["laura.jv@coditramuntana.com"]
   s.summary = "SMS code verifier"
-  # s.homepage = "calafell"
+  s.homepage = "https://github.com/AjuntamentdeCalafell/decidim-calafell"
   s.license = "AGPLv3"
 
   s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]

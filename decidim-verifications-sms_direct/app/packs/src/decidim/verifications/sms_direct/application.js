@@ -10,7 +10,6 @@ $(() => {
     mobilePhoneInput.readOnly = true;
 
     let mobilePhoneNumber = mobilePhoneInput.value;
-    alert("Validate phone number with regexp")
 
     let request = new XMLHttpRequest();
     var url = `/verifications_sms_direct/sms_codes?phone_num=${mobilePhoneNumber}`;
@@ -18,7 +17,6 @@ $(() => {
  
     request.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        console.log(this.response)
         verificationCodeInput.disabled = false;
       }
     }

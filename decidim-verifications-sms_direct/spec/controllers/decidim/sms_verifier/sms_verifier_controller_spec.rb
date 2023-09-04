@@ -2,7 +2,6 @@
 
 require "spec_helper"
 RSpec.describe Decidim::Verifications::SmsDirect::SmsCodesController, type: :controller do
-  # include Warden::Test::Helpers
 
   routes { Decidim::Verifications::SmsDirect::Engine.routes }
 
