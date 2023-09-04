@@ -3,14 +3,23 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.26-stable" }
+DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.27-stable" }
 
 gem "decidim", DECIDIM_VERSION
+gem "decidim-cdtb", git: "https://github.com/CodiTramuntana/decidim-module-cdtb.git"
 gem "decidim-initiatives", DECIDIM_VERSION
-gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", tag: "v0.26.2.5"
-# gem "decidim-verify_wo_registration", git: "https://github.com/CodiTramuntana/decidim-verify_wo_registration", tag: "v0.0.2"
+gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", tag: "v0.27.1.2"
+gem "decidim-verify_wo_registration", "~> 0.2.0"
+gem "decidim-verifications-sms_direct", path: '.'
+
+# temporal solution while gems embrace new psych 4 (the default in Ruby 3.1) behavior.
+gem "psych", "< 4"
+
+gem "seven_zip_ruby", git: "https://github.com/andrewhamon/seven_zip_ruby", branch: "ah/install-so-in-gem-lib"
 
 gem "puma"
+gem "matrix"
+
 gem "uglifier", ">= 1.3.0"
 gem "virtus-multiparams"
 gem "wicked_pdf"
@@ -23,7 +32,6 @@ gem "execjs", "~> 2.7.0"
 
 group :development, :test do
   gem "byebug", platform: :mri
-
   gem "decidim-dev", DECIDIM_VERSION
   gem "faker"
   gem "rspec-rails"
@@ -33,7 +41,7 @@ end
 
 group :development do
   gem "letter_opener_web"
-  gem "listen", "~> 3.1.0"
+  gem "listen"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console"

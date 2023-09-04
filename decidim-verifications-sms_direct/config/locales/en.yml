@@ -1,0 +1,15 @@
+en:
+  activemodel:
+    attributes:
+      sms_direct_handler:
+        mobile_phone_number: Mobile phone number
+        verification_code: Verification code
+  decidim:
+    authorization_handlers:
+      sms_direct:
+        explanation: Set you mobile phone number so we can send you an SMS with a verification code
+        name: SMS code
+  sms_direct:
+    form:
+      ask_code: Send the SMS
+      code_help: In order to get verified, ask for an SMS code by clicking on the button and write it in this field.

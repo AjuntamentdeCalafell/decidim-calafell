@@ -1,0 +1,15 @@
+es:
+  activemodel:
+    attributes:
+      sms_direct_handler:
+        mobile_phone_number: Número de teléfono
+        verification_code: Código de verificación
+  decidim:
+    authorization_handlers:
+      sms_direct:
+        explanation: Indica tu número de teléfono móvil para verificar tu identidad.
+        name: Código por SMS
+  sms_direct:
+    form:
+      ask_code: Enviar código SMS
+      code_help: Para verificarte pide un código SMS clicando en el botón e indícalo en este campo.
