@@ -34,6 +34,7 @@ storage/
 config/application.yml
 
 .rake_tasks~
+yarn.lock
 
 decidim_dummy_app/
 
