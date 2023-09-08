@@ -13,3 +13,5 @@ es:
     form:
       ask_code: Enviar código SMS
       code_help: Para verificarte pide un código SMS clicando en el botón e indícalo en este campo.
+      errors:
+        blank_mobile_phone_number: El número de teléfono móvil tiene que ser un número válido en el Estado Español
