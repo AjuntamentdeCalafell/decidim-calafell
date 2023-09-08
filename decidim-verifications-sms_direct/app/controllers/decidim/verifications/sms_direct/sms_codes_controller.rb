@@ -21,10 +21,10 @@ module Decidim
             if phone_code.save
               render json: { phone_number: phone_code.phone_number }
             else
-              render json: phone_code.full_messages, status: 400
+              render plain: phone_code.full_messages, status: 400
             end
           else
-            render json: t("sms_direct.form.errors.blank_mobile_phone_number"), status: 400
+            render plain: t("sms_direct.form.errors.blank_mobile_phone_number"), status: 400
           end
         end
       end
