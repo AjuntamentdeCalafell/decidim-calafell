@@ -8,19 +8,23 @@ module Decidim
         def create
           phone_num = SmsDirectHandler.normalize_phone_number(params[:phone_num])
 
-          handler = ::SmsDirectHandler.from_params({mobile_phone_number: phone_num, user: current_user})
-          generated_code= handler.generate_and_send_code
+          if phone_num.present?
+            handler = ::SmsDirectHandler.from_params({mobile_phone_number: phone_num, user: current_user})
+            generated_code= handler.generate_and_send_code
 
-          phone_code= Decidim::Verifications::SmsDirect::PhoneCode.find_or_initialize_by(
-            organization: current_organization,
-            phone_number: phone_num
-          )
-          phone_code.code = generated_code
+            phone_code= Decidim::Verifications::SmsDirect::PhoneCode.find_or_initialize_by(
+              organization: current_organization,
+              phone_number: phone_num
+            )
+            phone_code.code = generated_code
 
-          if phone_code.save
-            render json: { phone_number: phone_code.phone_number }
+            if phone_code.save
+              render json: { phone_number: phone_code.phone_number }
+            else
+              render plain: phone_code.full_messages, status: 400
+            end
           else
-            render json: { error: phone_code.full_messages }
+            render plain: t("sms_direct.form.errors.blank_mobile_phone_number"), status: 400
           end
         end
       end

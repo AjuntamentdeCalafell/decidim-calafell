@@ -49,7 +49,10 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
   end
 
   def self.normalize_phone_number(number)
-    Phonelib.parse(number, :es).e164
+    parsed= Phonelib.parse(number, :es)
+    if parsed.valid?
+      parsed.e164
+    end
   end
 
   #------------------------------------------------------------------

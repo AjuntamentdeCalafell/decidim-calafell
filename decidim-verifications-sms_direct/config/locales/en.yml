@@ -13,3 +13,5 @@ en:
     form:
       ask_code: Send the SMS
       code_help: In order to get verified, ask for an SMS code by clicking on the button and write it in this field.
+      errors:
+        blank_mobile_phone_number: The mobile phone number must be a valid number in Spain
