@@ -18,6 +18,8 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
 
   # A mobile phone can only be verified once but it should be private.
   def unique_id
+    return unless organization
+
     Digest::MD5.hexdigest(
       "#{organization.id}-#{mobile_phone_number}-#{Rails.application.secrets.secret_key_base}"
     )
