@@ -37,3 +37,9 @@ You're good to go!
 1. Fill in the required env vars.
 1. Create the app
 1. Enable Review Apps for this app (you'll need to create a Pipeline)
+
+### Decorators, overrides and more.
+#### Iniciatives
+There is a problem in Decidim with Authorizations. Authorization is found, but the user is not passed.
+
+This decorator passes the user in parameters: `app/decorators/forms/decidim/initiatives/vote_form_decorator.rb`
