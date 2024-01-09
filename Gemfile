@@ -17,6 +17,8 @@ gem "psych", "< 4"
 
 gem "seven_zip_ruby", git: "https://github.com/andrewhamon/seven_zip_ruby", branch: "ah/install-so-in-gem-lib"
 
+gem "figaro"
+
 gem "puma"
 gem "matrix"
 
