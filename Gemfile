@@ -21,6 +21,8 @@ gem "seven_zip_ruby", git: "https://github.com/andrewhamon/seven_zip_ruby", bran
 # More exactly in comments in the homepage and in processes cards in the processes listing
 gem "nokogiri", "1.13.6"
 
+gem "daemons"
+gem "delayed_job_active_record"
 gem "execjs", "~> 2.7.0"
 gem "figaro"
 gem "uglifier", ">= 1.3.0"
