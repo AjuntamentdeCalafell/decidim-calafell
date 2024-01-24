@@ -24,5 +24,11 @@ module DecidimCalafell
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+     # Make decorators available
+     config.to_prepare do
+      Dir.glob(Rails.root.join("app/decorators/**/*_decorator*.rb")).each do |c|
+        require_dependency(c)
+      end
+    end
   end
 end
