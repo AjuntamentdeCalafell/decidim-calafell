@@ -20,6 +20,8 @@ Rails.application.configure do
   # `config/secrets.yml.key`.
   config.read_encrypted_secrets = true
 
+  config.secret_key_base = ENV.fetch("SECRET_KEY_BASE", nil)
+
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
@@ -63,7 +65,7 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "decidim_calafell_production"
-  config.active_job.queue_adapter = :sidekiq
+  config.active_job.queue_adapter = :delayed_job
 
   config.action_mailer.perform_caching = false
 
