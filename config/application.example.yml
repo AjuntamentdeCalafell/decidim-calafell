@@ -25,7 +25,7 @@ default: &default
   MAILER_SMTP_USER_NAME: "smtp email username"
   MAILER_SMTP_PASSWORD: "smtp email password"
   # GeoCoder configuration (developer.here.com)
-  GEOCODER_LOOKUP_API_KEY: "here_api_key"
+  HERE_API_KEY: "here_api_key"
   SECRET_KEY_BASE: "must be different for each environment; run bin/rake secret and copy here"
 
 development:
