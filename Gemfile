@@ -5,6 +5,9 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.27-stable" }
 
+# force uri version to avoid Gem::LoadError
+gem "uri", "0.10.1"
+
 gem "decidim", DECIDIM_VERSION
 gem "decidim-cdtb", git: "https://github.com/CodiTramuntana/decidim-module-cdtb.git", branch: "main"
 gem "decidim-initiatives", DECIDIM_VERSION
