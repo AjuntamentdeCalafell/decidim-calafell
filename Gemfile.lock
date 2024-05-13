@@ -183,11 +183,11 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-module-cdtb.git
-  revision: b762fcf212ac7ba70223762067c52497c967d59e
+  revision: 04d4a31f5646ab43e3b87e55bc300c428a98681d
   branch: main
   specs:
-    decidim-cdtb (0.1.5)
-      decidim (>= 0.26.2)
+    decidim-cdtb (0.2.0)
+      decidim (>= 0.27.0)
       rails (>= 6)
       ruby-progressbar
 
@@ -956,7 +956,7 @@ DEPENDENCIES
   wicked_pdf
 
 RUBY VERSION
-   ruby 3.0.2p107
+   ruby 3.0.7p220
 
 BUNDLED WITH
    2.4.12
