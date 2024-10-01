@@ -53,7 +53,6 @@ group :production do
   gem "aws-sdk-s3", require: false
   gem 'dalli'
   gem 'sendgrid-ruby'
-  gem 'newrelic_rpm'
   gem 'sentry-raven'
   gem 'sidekiq'
 end
