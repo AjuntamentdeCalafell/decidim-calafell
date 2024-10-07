@@ -7,7 +7,6 @@
     "heroku-redis",
     "logentries:le_tryit",
     "memcachedcloud:30",
-    "newrelic:wayne",
     "sendgrid:starter"
   ],
   "scripts": {
