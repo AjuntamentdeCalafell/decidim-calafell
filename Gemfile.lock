@@ -183,10 +183,10 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-module-cdtb.git
-  revision: 04d4a31f5646ab43e3b87e55bc300c428a98681d
+  revision: 6a0c03711f3ceb2b4155df0d62f486846165a5c9
   branch: main
   specs:
-    decidim-cdtb (0.2.0)
+    decidim-cdtb (0.2.1)
       decidim (>= 0.27.0)
       rails (>= 6)
       ruby-progressbar
