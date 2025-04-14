@@ -44,3 +44,11 @@ decidim-verifications-sms_direct/.rspec-failures
 decidim-verifications-sms_direct/.rspec_status
 decidim-verifications-sms_direct/spec/
 
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+tailwind.config.js
