@@ -13,6 +13,6 @@ describe 'Visit the home page', type: :system, perform_enqueued: true do
 
   it 'renders the home page' do
     visit decidim.root_path
-    expect(page).to have_content(/Bienvenida a la plataforma participativa/i)
+    expect(page).to have_content(/Welcome to Schultz LLC participatory platform/i)
   end
 end
