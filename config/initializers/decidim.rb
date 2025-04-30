@@ -72,6 +72,17 @@ Decidim.configure do |config|
   # config.max_reports_before_hiding = 3
 
   config.sms_gateway_service = "ParlemSmsGateway"
+
+  config.content_security_policies_extra = {
+    "default-src" => %w('self' 'unsafe-inline'),
+    "script-src" => %w('self' 'unsafe-inline' 'unsafe-eval'),
+    "style-src" => %w('self' 'unsafe-inline'),
+    "img-src" => %w('self' *.hereapi.com data:),
+    "font-src" => %w('self'),
+    "connect-src" => %w('self' *.hereapi.com *.jsdelivr.net),
+    "frame-src" => %w('self'),
+    "media-src" => %w('self')
+  }
 end
 
 # Inform Decidim about the assets folder

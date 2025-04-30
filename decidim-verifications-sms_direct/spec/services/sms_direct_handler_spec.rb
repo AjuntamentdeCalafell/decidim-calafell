@@ -89,10 +89,10 @@ describe SmsDirectHandler do
 
   context 'unique_id' do
     it 'generates a different ID for a different phone number' do
-      handler.mobile_phone_number = 'ABC123'
+      handler.mobile_phone_number = '654987321'
       unique_id1 = handler.unique_id
 
-      handler.mobile_phone_number = 'XYZ456'
+      handler.mobile_phone_number = '632598741'
       unique_id2 = handler.unique_id
 
       expect(unique_id1).to_not eq(unique_id2)
@@ -109,7 +109,7 @@ describe SmsDirectHandler do
     end
 
     it 'hashes the phone number' do
-      handler.mobile_phone_number = 'ABC123'
+      handler.mobile_phone_number = '654987321'
       unique_id = handler.unique_id
 
       expect(unique_id).to_not include(handler.mobile_phone_number)

@@ -2,6 +2,7 @@
 // Notice that this file is included at the very end of the stylesheets packs to have
 // more priority
 //
-// To override CSS variables or Foundation settings use _decidim-settings.scss
-//
 // By default this is empty.
+:root {
+  --primary-rgb: 0, 151, 144;
+}
