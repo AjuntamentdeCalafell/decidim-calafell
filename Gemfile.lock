@@ -189,7 +189,7 @@ GIT
 PATH
   remote: .
   specs:
-    decidim-verifications-sms_direct (0.0.1)
+    decidim-verifications-sms_direct (0.1.0)
       decidim (~> 0.28.5)
       decidim-admin (~> 0.28.5)
       decidim-core (~> 0.28.5)

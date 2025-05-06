@@ -151,7 +151,7 @@ GIT
 PATH
   remote: .
   specs:
-    decidim-verifications-sms_direct (0.0.1)
+    decidim-verifications-sms_direct (0.1.0)
       decidim (~> 0.28.5)
       decidim-admin (~> 0.28.5)
       decidim-core (~> 0.28.5)
@@ -827,7 +827,7 @@ DEPENDENCIES
   faker
   letter_opener_web
   listen
-  rubocop (~> 1.50.0)
+  rubocop
 
 BUNDLED WITH
    2.6.8

@@ -6,6 +6,7 @@ require 'decidim/dev/test/authorization_shared_examples'
 describe SmsDirectHandler do
   let(:subject) { handler }
   let(:handler) { described_class.from_params(params) }
+  let(:handler2) { described_class.from_params(params) }
   let(:mobile_phone_number) { '666778899' }
   let(:verification_code) { nil }
   let(:params) do
@@ -89,11 +90,11 @@ describe SmsDirectHandler do
 
   context 'unique_id' do
     it 'generates a different ID for a different phone number' do
-      handler.mobile_phone_number = '654987321'
+      handler.mobile_phone_number = 'ABC123'
       unique_id1 = handler.unique_id
 
-      handler.mobile_phone_number = '632598741'
-      unique_id2 = handler.unique_id
+      handler2.mobile_phone_number = 'XYZ456'
+      unique_id2 = handler2.unique_id
 
       expect(unique_id1).to_not eq(unique_id2)
     end
