@@ -377,7 +377,7 @@ GEM
     db-query-matchers (0.10.0)
       activesupport (>= 4.0, < 7)
       rspec (~> 3.0)
-    decidim-file_authorization_handler (0.27.1.6)
+    decidim-file_authorization_handler (0.27.1.7)
       decidim (~> 0.27.1)
       decidim-admin (~> 0.27.1)
       rails (>= 5.2)
@@ -936,7 +936,7 @@ DEPENDENCIES
   decidim!
   decidim-cdtb!
   decidim-dev!
-  decidim-file_authorization_handler (~> 0.27.1.6)
+  decidim-file_authorization_handler (~> 0.27.1.7)
   decidim-initiatives!
   decidim-verifications-sms_direct!
   decidim-verify_wo_registration (~> 0.2.0)
