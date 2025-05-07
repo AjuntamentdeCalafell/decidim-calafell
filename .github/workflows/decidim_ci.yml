@@ -55,7 +55,7 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: 119.0.6045.105
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
