@@ -44,3 +44,6 @@ decidim-verifications-sms_direct/.rspec-failures
 decidim-verifications-sms_direct/.rspec_status
 decidim-verifications-sms_direct/spec/
 
+tailwind.config.js
+
+public/sw*
