@@ -94,7 +94,7 @@ describe SmsDirectHandler do
       unique_id1 = handler.unique_id
 
       handler2.mobile_phone_number = 'XYZ456'
-      unique_id2 = handler2.unique_id
+      unique_id2 = handler.unique_id
 
       expect(unique_id1).to_not eq(unique_id2)
     end

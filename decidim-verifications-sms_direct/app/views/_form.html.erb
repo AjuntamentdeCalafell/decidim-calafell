@@ -1,11 +1,13 @@
 <div id="sms_direct-form-partial">
   <%= form.telephone_field(:mobile_phone_number, pattern: "[0-9]{9}", maxlength: 9) %>
-  <div class="actions">
-    <%= link_to t("sms_direct.form.ask_code"), "#", id: "send-sms-code", class: "button expanded send-sms-code"%>
+  <div class="actions mt-5">
+    <%= link_to t("sms_direct.form.ask_code"), "#", id: "send-sms-code", class: "button md:button__lg button__secondary w-full"%>
   </div>
 
-  <%= form.text_field(:verification_code, autocomplete: "off", help_text: t("sms_direct.form.code_help")) %>
+  <div class="mt-5">
+    <%= form.text_field(:verification_code, autocomplete: "off", help_text: t("sms_direct.form.code_help")) %>
 
-  <%= form.hidden_field(:handler_name) %>
-  <%= append_javascript_pack_tag "decidim_verifications_sms_direct" %>
+    <%= form.hidden_field(:handler_name) %>
+    <%= append_javascript_pack_tag "decidim_verifications_sms_direct" %>
+  </div>
 </div>

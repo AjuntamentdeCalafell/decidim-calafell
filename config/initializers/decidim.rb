@@ -74,8 +74,8 @@ Decidim.configure do |config|
   config.sms_gateway_service = "ParlemSmsGateway"
 
   config.content_security_policies_extra = {
-    "img-src" => %w('self' *.hereapi.com data:),
-    "connect-src" => %w('self' *.hereapi.com *.jsdelivr.net),
+    "img-src" => %w('self' data: *.decidim-calafell-prod.s3.eu-west-3.amazonaws.com),
+    "connect-src" => %w('self' *.decidim-calafell-prod.s3.eu-west-3.amazonaws.com)
   }
 end
 
