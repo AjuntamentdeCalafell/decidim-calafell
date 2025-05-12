@@ -12,19 +12,16 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.27-stable" }
-
-# temporal solution while gems embrace new psych 4 (the default in Ruby 3.1) behavior.
-gem "psych", "< 4"
+DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.28-stable" }
 
 group :development, :test do
   gem "bootsnap", require: false
   gem "decidim", DECIDIM_VERSION
-  gem "decidim-cdtb", path: "/home/oliver/prog/decidim/modules/decidim-cdtb"
+  gem "decidim-cdtb", git: "https://github.com/CodiTramuntana/decidim-module-cdtb.git", tag: "v0.4.2"
   gem "letter_opener_web"
   gem "listen"
 end
 
 group :development do
-  gem "rubocop", "~> 1.28.0"
+  gem "rubocop"
 end
