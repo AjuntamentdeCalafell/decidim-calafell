@@ -1,7 +1,7 @@
 <div id="sms_direct-form-partial">
   <%= form.telephone_field(:mobile_phone_number, pattern: "[0-9]{9}", maxlength: 9) %>
   <div class="actions mt-5">
-    <%= link_to t("sms_direct.form.ask_code"), "#", id: "send-sms-code", class: "button md:button__lg button__secondary w-full"%>
+    <%= link_to t("sms_direct.form.ask_code"), "#", id: "send-sms-code", class: "button expanded send-sms-code md:button__lg button__secondary w-full"%>
   </div>
 
   <div class="mt-5">
