@@ -186,6 +186,14 @@ GIT
       rails (>= 6)
       ruby-progressbar
 
+GIT
+  remote: https://github.com/mainio/decidim-module-term_customizer.git
+  revision: 32b47529c192071cfc4caca5fa203ee9e8fd2c6b
+  specs:
+    decidim-term_customizer (0.28.0)
+      decidim-admin (~> 0.28.0)
+      decidim-core (~> 0.28.0)
+
 PATH
   remote: .
   specs:
@@ -924,6 +932,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-file_authorization_handler (~> 0.28.2.0)
   decidim-initiatives!
+  decidim-term_customizer!
   decidim-verifications-sms_direct!
   decidim-verify_wo_registration (~> 0.3.0)
   delayed_job_active_record
