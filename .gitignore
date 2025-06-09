@@ -25,8 +25,7 @@ public/uploads
 public/packs/
 public/packs-test/
 public/decidim-packs/
-public/sw.js
-public/sw.js.map
+public/sw.js*
 
 node_modules/
 storage/
