@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
 
-  s.required_ruby_version = ">= 3.1.1"
+  s.required_ruby_version = ">= 3.1.7"
 
   # rubocop: disable Lint/ConstantDefinitionInBlock
   DECIDIM_VERSION = "~> #{Decidim::Verifications::SmsDirect::DECIDIM_VERSION}"
@@ -34,5 +34,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency "decidim-cdtb"
   s.add_development_dependency "decidim-dev", DECIDIM_VERSION
   s.add_development_dependency "faker"
-  s.add_development_dependency "letter_opener_web", "~> 1.3.3"
 end

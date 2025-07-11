@@ -12,7 +12,7 @@ env:
   DATABASE_NAME: app
   DATABASE_USERNAME: postgres
   DATABASE_PASSWORD: postgres
-  RUBY_VERSION: 3.1.1
+  RUBY_VERSION: 3.1.7
 
 jobs:
   test:
