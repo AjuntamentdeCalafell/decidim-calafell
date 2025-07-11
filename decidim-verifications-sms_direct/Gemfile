@@ -12,12 +12,14 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.28-stable" }
+DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.28-stable" }.freeze
 
 group :development, :test do
   gem "bootsnap", require: false
   gem "decidim", DECIDIM_VERSION
   gem "decidim-cdtb", git: "https://github.com/CodiTramuntana/decidim-module-cdtb.git", tag: "v0.4.2"
+  gem "decidim-dev", DECIDIM_VERSION
+  gem "faker"
   gem "letter_opener_web"
   gem "listen"
 end

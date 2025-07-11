@@ -9,7 +9,7 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
   attribute :verification_code, String
 
   validates :mobile_phone_number, :verification_code, :sms_gateway, presence: true
-  validates :mobile_phone_number, phone: {countries: :es}
+  validates :mobile_phone_number, phone: { countries: :es }
   validate :verification_code_is_correct!
 
   def handler_name
@@ -35,14 +35,14 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
   # The metadata.
   def metadata
     {
-      phone_number: mobile_phone_number,
+      phone_number: mobile_phone_number
     }
   end
 
   # Generates the verification_code and sends it via Decidim's SMS Gateway.
   def generate_and_send_code
     return unless sms_gateway
-    
+
     verification_code= generate_code!
 
     return unless sms_gateway.new(mobile_phone_number, code: verification_code).deliver_code
@@ -52,13 +52,12 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
 
   def self.normalize_phone_number(number)
     parsed= Phonelib.parse(number, :es)
-    if parsed.valid?
-      parsed.e164
-    end
+    parsed.e164 if parsed.valid?
   end
 
   #------------------------------------------------------------------
   private
+
   #------------------------------------------------------------------
 
   def sms_gateway
@@ -74,10 +73,10 @@ class SmsDirectHandler < Decidim::AuthorizationHandler
   end
 
   def verification_code_is_correct!
-    phone_code= Decidim::Verifications::SmsDirect::PhoneCode.inside(user&.organization || current_organization).find_by(phone_number: SmsDirectHandler.normalize_phone_number(mobile_phone_number))
+    phone_code= Decidim::Verifications::SmsDirect::PhoneCode.inside(
+      user&.organization || current_organization
+    ).find_by(phone_number: SmsDirectHandler.normalize_phone_number(mobile_phone_number))
 
-    if phone_code.nil? || phone_code.code != verification_code
-      errors.add(:verification_code, "Unexpected verification_code")
-    end
+    errors.add(:verification_code, "Unexpected verification_code") if phone_code.nil? || phone_code.code != verification_code
   end
 end

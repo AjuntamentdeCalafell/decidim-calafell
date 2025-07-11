@@ -15,4 +15,4 @@ module Decidim::Initiatives::VoteFormDecorator
   end
 end
 
-::Decidim::Initiatives::VoteFormDecorator.decorate
+Decidim::Initiatives::VoteFormDecorator.decorate

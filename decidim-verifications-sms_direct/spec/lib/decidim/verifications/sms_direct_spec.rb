@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe Decidim::Verifications::SmsDirect do
-
   describe "workflow" do
-    let(:workflow) { Decidim.authorization_workflows.find {|wf| wf.name == "sms_direct"} }
+    let(:workflow) { Decidim.authorization_workflows.find { |wf| wf.name == "sms_direct" } }
 
     it "is initialized" do
       expect(workflow).to be_present

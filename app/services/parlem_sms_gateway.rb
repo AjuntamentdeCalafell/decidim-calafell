@@ -21,7 +21,7 @@ class ParlemSmsGateway
       report_error(response)
       false
     else
-      Rails.logger.info("SMS sent with msg id: #{response.dig('data', 'id')}")
+      Rails.logger.info("SMS sent with msg id: #{response.dig("data", "id")}")
       true
     end
   end
@@ -36,11 +36,10 @@ class ParlemSmsGateway
     end
 
     response = connection.post(parlem_api_url,
-      configuration_name: @parlem_config[:configuration_name],
-      message: @message || text,
-      numbers: @mobile_phone_number,
-      api_token: @parlem_config[:api_token]
-    )
+                               configuration_name: @parlem_config[:configuration_name],
+                               message: @message || text,
+                               numbers: @mobile_phone_number,
+                               api_token: @parlem_config[:api_token])
 
     response.body
   end
@@ -51,6 +50,7 @@ class ParlemSmsGateway
 
   #-------------------------------------------
   private
+
   #-------------------------------------------
 
   def report_error(response)

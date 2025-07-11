@@ -12,7 +12,7 @@ Decidim.configure do |config|
   # config.available_locales = Rails.application.secrets.decidim[:available_locales].presence || [:en]
   # Or block set it up manually and prevent ENV manipulation:
   config.available_locales = %w(ca es)
-  
+
   # Sets the default locale for new organizations. When creating a new
   # organization from the System area, system admins will be able to overwrite
   # this value for that specific organization.
@@ -73,17 +73,19 @@ Decidim.configure do |config|
 
   config.sms_gateway_service = "ParlemSmsGateway"
 
+  # rubocop: disable Lint/PercentStringArray
   config.content_security_policies_extra = {
-    "img-src" => %w('self' data: *.decidim-calafell-prod.s3.eu-west-3.amazonaws.com),
-    "connect-src" => %w('self' *.decidim-calafell-prod.s3.eu-west-3.amazonaws.com)
+    "img-src" => %w('self' data: https://*.s3.eu-west-3.amazonaws.com),
+    "connect-src" => %w('self' https://*.s3.eu-west-3.amazonaws.com)
   }
+  # rubocop: enable Lint/PercentStringArray
 end
 
 # Inform Decidim about the assets folder
 Decidim.register_assets_path File.expand_path("app/packs", Rails.application.root)
 
 Decidim::Verifications.register_workflow(:census_authorization_handler) do |auth|
-  auth.form = 'CensusAuthorizationHandler'
+  auth.form = "CensusAuthorizationHandler"
   auth.options do |options|
     options.attribute :postal_code, type: :string, required: false
   end

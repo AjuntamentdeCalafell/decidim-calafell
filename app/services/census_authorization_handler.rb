@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Checks the authorization against the census for Terrassa.
-require 'digest/md5'
+require "digest/md5"
 
 # This class performs a check against the official census database in order
 # to verify the citizen's residence.
@@ -14,7 +14,7 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
   attribute :date_of_birth, Date
 
   validates :date_of_birth, :postal_code, presence: true
-  validates :document_type, inclusion: { in: %i[dni nie passport community_dni] }, presence: true
+  validates :document_type, inclusion: { in: [:dni, :nie, :passport, :community_dni] }, presence: true
   validates :document_number, format: { with: /\A[A-z0-9]*\z/ }, presence: true
   validates :postal_code, format: { with: /\A[0-9]*\z/ }
 
@@ -22,8 +22,8 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
   validate :over_16
 
   def census_document_types
-    %i[dni nie passport community_dni].map do |type|
-      [I18n.t(type, scope: 'decidim.census_authorization_handler.document_types'), type]
+    [:dni, :nie, :passport, :community_dni].map do |type|
+      [I18n.t(type, scope: "decidim.census_authorization_handler.document_types"), type]
     end
   end
 
@@ -34,15 +34,16 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
   end
 
   def metadata
-    super.merge(postal_code: postal_code)
+    super.merge(postal_code:)
   end
 
   private
 
   def district
-    response.xpath('//districte').text.to_s
+    response.xpath("//districte").text.to_s
   end
 
+  # rubocop: disable Style/HashLikeCase
   def sanitized_document_type
     case document_type&.to_sym
     when :dni
@@ -55,15 +56,16 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
       4
     end
   end
+  # rubocop: enable Style/HashLikeCase
 
   def sanitized_date_of_birth
-    @sanitized_date_of_birth ||= date_of_birth&.strftime('%Y-%m-%d')
+    @sanitized_date_of_birth ||= date_of_birth&.strftime("%Y-%m-%d")
   end
 
   def document_type_valid
     return nil if response.blank?
 
-    errors.add(:document_number, I18n.t('census_authorization_handler.invalid_document')) unless response['valid'] == true
+    errors.add(:document_number, I18n.t("census_authorization_handler.invalid_document")) unless response["valid"] == true
   end
 
   def response
@@ -76,18 +78,18 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
 
     response ||= Faraday.get Rails.application.secrets.census_url do |request|
       request.options.timeout = 10
-      request.params['auth_token'] = Rails.application.secrets.census_auth_token
-      request.params['document_type'] = sanitized_document_type
-      request.params['document_number'] = document_number
-      request.params['postal_code'] = postal_code
-      request.params['birth_date'] = sanitized_date_of_birth
+      request.params["auth_token"] = Rails.application.secrets.census_auth_token
+      request.params["document_type"] = sanitized_document_type
+      request.params["document_number"] = document_number
+      request.params["postal_code"] = postal_code
+      request.params["birth_date"] = sanitized_date_of_birth
     end
 
     @response ||= JSON.parse(response.body)
   end
 
   def over_16
-    errors.add(:date_of_birth, I18n.t('census_authorization_handler.age_under_16')) unless age && age >= 16
+    errors.add(:date_of_birth, I18n.t("census_authorization_handler.age_under_16")) unless age && age >= 16
   end
 
   def age
