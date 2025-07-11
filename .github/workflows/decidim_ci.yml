@@ -2,7 +2,7 @@ name: "[CI] Decidim"
 on:
   push:
     branches:
-      - master
+      - main
       - release/*
       - "*-stable"
   pull_request:
