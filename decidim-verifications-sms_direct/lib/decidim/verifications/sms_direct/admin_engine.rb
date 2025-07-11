@@ -6,8 +6,8 @@ module Decidim
       class AdminEngine < ::Rails::Engine
         isolate_namespace Decidim::Verifications::SmsDirect::Admin
 
-        routes do
-        end
+        # routes do
+        # end
       end
     end
   end

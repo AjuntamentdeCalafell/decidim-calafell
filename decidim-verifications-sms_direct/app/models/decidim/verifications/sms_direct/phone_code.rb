@@ -7,11 +7,11 @@ module Decidim
         EXPIRATION_DAYS= 1
 
         belongs_to :organization, foreign_key: :decidim_organization_id,
-                                class_name: "Decidim::Organization"
+                                  class_name: "Decidim::Organization"
 
         before_save :normalize_phone
 
-        scope :expired, -> { where("updated_at < ?", Time.zone.now - EXPIRATION_DAYS.days) }
+        scope :expired, -> { where(updated_at: ...(Time.zone.now - EXPIRATION_DAYS.days)) }
 
         # An organization scope
         def self.inside(organization)

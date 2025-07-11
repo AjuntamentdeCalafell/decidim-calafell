@@ -26,9 +26,9 @@ module Decidim
           end
         end
 
-        initializer 'verifiers_sms_direct.mount_routes' do |_app|
+        initializer "verifiers_sms_direct.mount_routes" do |_app|
           Decidim::Core::Engine.routes do
-            mount Decidim::Verifications::SmsDirect::Engine => '/verifications_sms_direct', as: "decidim_verifications_sms_direct"
+            mount Decidim::Verifications::SmsDirect::Engine => "/verifications_sms_direct", as: "decidim_verifications_sms_direct"
           end
         end
       end

@@ -16,22 +16,19 @@ Gem::Specification.new do |s|
   s.license = "AGPLv3"
 
   s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
-  s.test_files = Dir["spec/**/*"]
 
   s.required_ruby_version = ">= 3.1.7"
 
   # rubocop: disable Lint/ConstantDefinitionInBlock
-  DECIDIM_VERSION = "~> #{Decidim::Verifications::SmsDirect::DECIDIM_VERSION}"
+  DECIDIM_VERSION = "~> #{Decidim::Verifications::SmsDirect::DECIDIM_VERSION}".freeze
   # rubocop: enable Lint/ConstantDefinitionInBlock
 
   s.add_dependency "decidim", DECIDIM_VERSION
-  s.add_dependency "decidim-core", DECIDIM_VERSION
   s.add_dependency "decidim-admin", DECIDIM_VERSION
+  s.add_dependency "decidim-core", DECIDIM_VERSION
   s.add_dependency "decidim-verifications", DECIDIM_VERSION
-  s.add_dependency "rails", ">= 6.0"
   s.add_dependency "phonelib", ">= 0.8.3"
+  s.add_dependency "rails", ">= 6.0"
 
-  s.add_development_dependency "decidim-cdtb"
-  s.add_development_dependency "decidim-dev", DECIDIM_VERSION
-  s.add_development_dependency "faker"
+  s.metadata["rubygems_mfa_required"] = "true"
 end
