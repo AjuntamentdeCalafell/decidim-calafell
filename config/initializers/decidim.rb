@@ -72,6 +72,11 @@ Decidim.configure do |config|
   # config.max_reports_before_hiding = 3
 
   config.sms_gateway_service = "ParlemSmsGateway"
+
+  config.content_security_policies_extra = {
+    "img-src" => %w('self' data: *.decidim-calafell-prod.s3.eu-west-3.amazonaws.com),
+    "connect-src" => %w('self' *.decidim-calafell-prod.s3.eu-west-3.amazonaws.com)
+  }
 end
 
 # Inform Decidim about the assets folder

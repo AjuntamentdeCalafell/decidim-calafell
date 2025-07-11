@@ -12,7 +12,7 @@ env:
   DATABASE_NAME: app
   DATABASE_USERNAME: postgres
   DATABASE_PASSWORD: postgres
-  RUBY_VERSION: 3.0.7
+  RUBY_VERSION: 3.1.1
 
 jobs:
   test:
@@ -46,7 +46,7 @@ jobs:
           ruby-version: ${{ env.RUBY_VERSION }}
           bundler-cache: true
       - name: Recover Ruby dependency cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ./vendor/bundle
           key: ${{ runner.OS }}-app-rubydeps-${{ hashFiles('Gemfile.lock') }}
