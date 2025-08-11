@@ -177,16 +177,6 @@ GIT
       decidim-core (= 0.28.5)
 
 GIT
-  remote: https://github.com/CodiTramuntana/decidim-module-cdtb.git
-  revision: 2bae4569d65e086bdbc29f69d87f40537df07325
-  branch: main
-  specs:
-    decidim-cdtb (0.5.3)
-      decidim (>= 0.28.0)
-      rails (>= 6)
-      ruby-progressbar
-
-GIT
   remote: https://github.com/mainio/decidim-module-term_customizer.git
   revision: 32b47529c192071cfc4caca5fa203ee9e8fd2c6b
   specs:
@@ -363,6 +353,10 @@ GEM
     date_validator (0.12.0)
       activemodel (>= 3)
       activesupport (>= 3)
+    decidim-cdtb (0.5.5)
+      decidim (>= 0.28.0)
+      rails (>= 6)
+      ruby-progressbar
     decidim-file_authorization_handler (0.28.2.0)
       decidim (~> 0.28.2)
       decidim-admin (~> 0.28.2)
@@ -939,7 +933,7 @@ DEPENDENCIES
   daemons
   dalli
   decidim!
-  decidim-cdtb!
+  decidim-cdtb
   decidim-dev!
   decidim-file_authorization_handler (~> 0.28.2.0)
   decidim-initiatives!
