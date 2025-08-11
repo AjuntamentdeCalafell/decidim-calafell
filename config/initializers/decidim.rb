@@ -79,6 +79,12 @@ Decidim.configure do |config|
     "connect-src" => %w('self' https://*.s3.eu-west-3.amazonaws.com)
   }
   # rubocop: enable Lint/PercentStringArray
+
+  if Decidim.module_installed? :verifications
+    Decidim::Verifications.configure do |config|
+      config.document_types = Rails.application.secrets.dig(:verifications, :document_types).presence || %w(identification_number passport)
+    end
+  end
 end
 
 # Inform Decidim about the assets folder

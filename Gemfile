@@ -3,15 +3,15 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.28-stable" }.freeze
+DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch: "release/0.29-stable" }.freeze
 
 gem "decidim", DECIDIM_VERSION
-gem "decidim-cdtb", git: "https://github.com/CodiTramuntana/decidim-module-cdtb.git", branch: "main"
-gem "decidim-file_authorization_handler", "~> 0.28.2.0"
+# gem "decidim-cdtb", git: "https://github.com/CodiTramuntana/decidim-module-cdtb.git", branch: "main"
+# gem "decidim-file_authorization_handler", "~> 0.28.2.0"
 gem "decidim-initiatives", DECIDIM_VERSION
-gem "decidim-term_customizer", "~> 0.28.0", git: "https://github.com/mainio/decidim-module-term_customizer.git"
-gem "decidim-verifications-sms_direct", path: "."
-gem "decidim-verify_wo_registration", "~> 0.3.0"
+# gem "decidim-term_customizer", "~> 0.28.0", git: "https://github.com/mainio/decidim-module-term_customizer.git"
+# gem "decidim-verifications-sms_direct", path: "."
+# gem "decidim-verify_wo_registration", "~> 0.3.0"
 
 # Solve: You have already activated uri 0.13.0, but your Gemfile requires uri 0.10.1.
 gem "uri", ">= 0.13.0"
@@ -34,15 +34,13 @@ group :development, :test do
   gem "faker"
   # Set versions because Property AutoCorrect errors.
   gem "rspec-rails", "~> 6.0.4"
-  gem "rubocop-factory_bot", "2.25.1"
-  gem "rubocop-rspec", "2.26.1"
+  gem "rubocop-factory_bot"
+  gem "rubocop-rspec"
 end
 
 group :development do
   gem "letter_opener_web"
   gem "listen"
-  gem "spring"
-  gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console"
 end
 
