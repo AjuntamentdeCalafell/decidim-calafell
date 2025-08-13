@@ -1,4 +1,22 @@
 GIT
+  remote: https://github.com/CodiTramuntana/decidim-file_authorization_handler.git
+  revision: 227e679dc06526c0d275078e4e972fc38139d24d
+  branch: master
+  specs:
+    decidim-file_authorization_handler (0.29.2.0)
+      decidim (~> 0.29.2)
+      decidim-admin (~> 0.29.2)
+
+GIT
+  remote: https://github.com/CodiTramuntana/decidim-module-term_customizer.git
+  revision: e369bc933f06fd1e47d6987fa6e408f0a2549e73
+  branch: upgrade/decidim_0.29
+  specs:
+    decidim-term_customizer (0.29.0)
+      decidim-admin (~> 0.29.0)
+      decidim-core (~> 0.29.0)
+
+GIT
   remote: https://github.com/CodiTramuntana/decidim.git
   revision: 860cd92588ff2328854401014e772998d0839619
   branch: release/0.29-stable
@@ -180,6 +198,17 @@ GIT
       devise_invitable (~> 2.0, >= 2.0.9)
     decidim-verifications (0.29.2)
       decidim-core (= 0.29.2)
+
+PATH
+  remote: .
+  specs:
+    decidim-verifications-sms_direct (0.1.0)
+      decidim (~> 0.29.2)
+      decidim-admin (~> 0.29.2)
+      decidim-core (~> 0.29.2)
+      decidim-verifications (~> 0.29.2)
+      phonelib (>= 0.8.3)
+      rails (>= 7.0.8)
 
 GEM
   remote: https://rubygems.org/
@@ -612,6 +641,7 @@ GEM
     pg_search (2.3.7)
       activerecord (>= 6.1)
       activesupport (>= 6.1)
+    phonelib (0.10.11)
     premailer (1.27.0)
       addressable
       css_parser (>= 1.19.0)
@@ -891,7 +921,10 @@ DEPENDENCIES
   dalli
   decidim!
   decidim-dev!
+  decidim-file_authorization_handler!
   decidim-initiatives!
+  decidim-term_customizer!
+  decidim-verifications-sms_direct!
   delayed_job_active_record
   execjs (~> 2.7.0)
   faker
