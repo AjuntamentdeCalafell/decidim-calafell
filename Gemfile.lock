@@ -964,6 +964,7 @@ DEPENDENCIES
   rspec-rails (~> 6.0.4)
   rubocop-factory_bot
   rubocop-rspec
+  rubocop-rspec_rails
   sendgrid-ruby
   sentry-raven
   sidekiq
