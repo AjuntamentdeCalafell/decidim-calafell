@@ -361,6 +361,14 @@ GEM
     date_validator (0.12.0)
       activemodel (>= 3)
       activesupport (>= 3)
+    decidim-cdtb (0.5.5)
+      decidim (>= 0.28.0)
+      rails (>= 6)
+      ruby-progressbar
+    decidim-verify_wo_registration (0.3.0)
+      decidim-budgets (>= 0.28)
+      decidim-core (>= 0.28)
+      decidim-proposals (>= 0.28)
     declarative-builder (0.2.0)
       trailblazer-option (~> 0.1.0)
     declarative-option (0.1.0)
@@ -937,10 +945,12 @@ DEPENDENCIES
   daemons
   dalli
   decidim!
+  decidim-cdtb (~> 0.5.5)
   decidim-dev!
   decidim-file_authorization_handler!
   decidim-initiatives!
   decidim-term_customizer!
+  decidim-verify_wo_registration (~> 0.3.0)
   delayed_job_active_record
   execjs (~> 2.7.0)
   faker
