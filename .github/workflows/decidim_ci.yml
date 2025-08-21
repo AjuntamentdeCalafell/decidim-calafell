@@ -33,11 +33,13 @@ jobs:
       DATABASE_USERNAME: postgres
       DATABASE_PASSWORD: postgres
       DATABASE_HOST: localhost
-      SECRET_KEY_BASE: "secret_key_base"
-      DB_TEST_DATABASE: "decidim_calafell_test_ci"
+      DB_TEST_DATABASE: decidim_calafell_test_ci
+      DB_PORT: 5432
       DB_POOL: 5
-      DECIDIM_DEFAULT_LOCALE: "ca"
+      SECRET_KEY_BASE: "secret_key_base"
+      DECIDIM_APPLICATION_NAME: "Decidim Calafell"
       DECIDIM_AVAILABLE_LOCALES: "ca,en,es"
+      DECIDIM_DEFAULT_LOCALE: "ca"
       DECIDIM_CORS_ENABLED: "true"
       DECIDIM_TRACK_NEWSLETTER_LINKS: auto
       DECIDIM_THROTTLING_MAX_REQUESTS: "250"
