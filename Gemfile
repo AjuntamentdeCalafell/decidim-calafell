@@ -11,7 +11,7 @@ gem 'decidim-file_authorization_handler',
     git: 'https://github.com/CodiTramuntana/decidim-file_authorization_handler.git', branch: 'master'
 gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-term_customizer", git: "https://github.com/CodiTramuntana/decidim-module-term_customizer.git", branch: 'upgrade/decidim_0.29'
-gem "decidim-verifications-sms_direct", path: "."
+# gem "decidim-verifications-sms_direct", path: "."
 # gem "decidim-verify_wo_registration", "~> 0.3.0"
 
 # Solve: You have already activated uri 0.13.0, but your Gemfile requires uri 0.10.1.
