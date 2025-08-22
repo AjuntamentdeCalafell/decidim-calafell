@@ -20,7 +20,7 @@ gem "uri", ">= 0.13.0"
 gem "daemons"
 gem "delayed_job_active_record"
 gem "execjs", "~> 2.7.0"
-gem "figjam"
+gem 'figjam', '2.0.0'
 gem "matrix"
 gem "puma"
 gem "puma_worker_killer"

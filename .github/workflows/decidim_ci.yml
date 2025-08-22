@@ -30,29 +30,9 @@ jobs:
         image: redis:3.2-alpine
         ports: ["6379:6379"]
     env:
-      RUBY_VERSION: 3.2.6
-      NODE_VERSION: 18.17.1
-      DECIDIM_APPLICATION_NAME: "Decidim Calafell"
-      DECIDIM_AVAILABLE_LOCALES: "ca,en,es"
-      DECIDIM_DEFAULT_LOCALE: "ca"
-      DECIDIM_CORS_ENABLED: "true"
-      DECIDIM_TRACK_NEWSLETTER_LINKS: auto
-      DECIDIM_THROTTLING_MAX_REQUESTS: "250"
-      DECIDIM_THROTTLING_PERIOD: "1"
-      DECIDIM_FOLLOW_HTTP_X_FORWARDED_HOST: "true"
-      DB_HOST: "localhost"
-      DB_PORT: 5432
-      DB_DATABASE: "decidim-calafell_development"
-      DB_TEST_DATABASE: "decidim-calafell_test"
-      DB_USERNAME: "postgres"
-      DB_PASSWORD: "postgres"
-      DB_POOL: 5
-      MAILER_SMTP_ADDRESS: "smtp.example.com"
-      MAILER_SMTP_DOMAIN: "example.com"
-      MAILER_SMTP_PORT: 587
-      MAILER_SMTP_USER_NAME: "user@example.com"
-      MAILER_SMTP_PASSWORD: "password"
-      HERE_API_KEY: "dummy_key"
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_HOST: localhost
       SECRET_KEY_BASE: "secret_key_base"
     steps:
       - uses: actions/checkout@v2.0.0
