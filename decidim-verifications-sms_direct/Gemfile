@@ -17,7 +17,7 @@ DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "r
 group :development, :test do
   gem "bootsnap", require: false
   gem "decidim", DECIDIM_VERSION
-  gem "decidim-cdtb"
+  gem "decidim-cdtb", "~> 0.5.5"
   gem "decidim-dev", DECIDIM_VERSION
   gem "faker"
   gem "letter_opener_web"

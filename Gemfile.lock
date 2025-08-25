@@ -199,6 +199,17 @@ GIT
     decidim-verifications (0.29.4)
       decidim-core (= 0.29.4)
 
+PATH
+  remote: .
+  specs:
+    decidim-verifications-sms_direct (0.2.0)
+      decidim (~> 0.29.4)
+      decidim-admin (~> 0.29.4)
+      decidim-core (~> 0.29.4)
+      decidim-verifications (~> 0.29.4)
+      phonelib (>= 0.8.3)
+      rails (>= 7.0.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -660,6 +671,7 @@ GEM
     pg_search (2.3.7)
       activerecord (>= 6.1)
       activesupport (>= 6.1)
+    phonelib (0.10.11)
     premailer (1.27.0)
       addressable
       css_parser (>= 1.19.0)
@@ -950,6 +962,7 @@ DEPENDENCIES
   decidim-file_authorization_handler!
   decidim-initiatives!
   decidim-term_customizer!
+  decidim-verifications-sms_direct!
   decidim-verify_wo_registration (~> 0.3.0)
   delayed_job_active_record
   execjs (~> 2.7.0)
