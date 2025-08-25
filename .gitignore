@@ -47,3 +47,4 @@ decidim-verifications-sms_direct/spec/
 tailwind.config.js
 
 public/sw*
+/config/master.key

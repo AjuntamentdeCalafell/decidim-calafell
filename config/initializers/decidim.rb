@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require Rails.root.join("app/services/parlem_sms_gateway")
+
 Decidim.configure do |config|
   config.application_name = Rails.application.secrets.decidim[:application_name]
   config.mailer_sender = Rails.application.secrets.decidim[:mailer_sender]
@@ -79,6 +81,12 @@ Decidim.configure do |config|
     "connect-src" => %w('self' https://*.s3.eu-west-3.amazonaws.com)
   }
   # rubocop: enable Lint/PercentStringArray
+
+  if Decidim.module_installed? :verifications
+    Decidim::Verifications.configure do |config|
+      config.document_types = Rails.application.secrets.dig(:verifications, :document_types).presence || %w(identification_number passport)
+    end
+  end
 end
 
 # Inform Decidim about the assets folder
@@ -96,3 +104,7 @@ Rails.application.config.i18n.default_locale = Decidim.default_locale
 
 # Inform Decidim about the assets folder
 Decidim.register_assets_path File.expand_path("app/packs", Rails.application.root)
+
+Decidim::Verifications.register_workflow(:sms_direct) do |workflow|
+  workflow.form = "Decidim::Verifications::SmsDirectHandler"
+end

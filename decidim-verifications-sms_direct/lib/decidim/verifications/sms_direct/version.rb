@@ -3,8 +3,8 @@
 module Decidim
   module Verifications
     module SmsDirect
-      DECIDIM_VERSION = "0.28.5"
-      VERSION = "0.1.0"
+      DECIDIM_VERSION = "0.29.4"
+      VERSION = "0.2.0"
     end
   end
 end

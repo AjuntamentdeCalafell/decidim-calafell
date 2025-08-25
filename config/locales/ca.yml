@@ -98,6 +98,11 @@ ca:
       assemblies: Consells Participatius
     sms:
       text: "El teu codi per verificar-te a Decidim Calafell és: %{code}"
+    verifications:
+      id_documents:
+        dni: DNI
+        nie: NIE
+        passport: Passaport
   layouts:
     decidim:
       assemblies:
