@@ -7,6 +7,7 @@ DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-cdtb", "~> 0.5.5"
+gem "decidim-decidim_awesome", "~> 0.12.3"
 gem "decidim-file_authorization_handler",
     git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git",
     tag: "v0.29.2"
