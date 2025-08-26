@@ -1,4 +1,22 @@
 GIT
+  remote: https://github.com/CodiTramuntana/decidim-file_authorization_handler.git
+  revision: 227e679dc06526c0d275078e4e972fc38139d24d
+  tag: v0.29.2
+  specs:
+    decidim-file_authorization_handler (0.29.2.0)
+      decidim (~> 0.29.2)
+      decidim-admin (~> 0.29.2)
+
+GIT
+  remote: https://github.com/CodiTramuntana/decidim-module-term_customizer.git
+  revision: e369bc933f06fd1e47d6987fa6e408f0a2549e73
+  branch: upgrade/decidim_0.29
+  specs:
+    decidim-term_customizer (0.29.0)
+      decidim-admin (~> 0.29.0)
+      decidim-core (~> 0.29.0)
+
+GIT
   remote: https://github.com/CodiTramuntana/decidim.git
   revision: d6d17c566caa98f91112ff786e7af67cb0c4faa3
   branch: release/0.29-stable
@@ -181,6 +199,17 @@ GIT
     decidim-verifications (0.29.4)
       decidim-core (= 0.29.4)
 
+PATH
+  remote: .
+  specs:
+    decidim-verifications-sms_direct (0.2.0)
+      decidim (~> 0.29.4)
+      decidim-admin (~> 0.29.4)
+      decidim-core (~> 0.29.4)
+      decidim-verifications (~> 0.29.4)
+      phonelib (>= 0.8.3)
+      rails (>= 7.0.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -261,8 +290,8 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.3)
     aws-eventstream (1.4.0)
-    aws-partitions (1.1144.0)
-    aws-sdk-core (3.229.0)
+    aws-partitions (1.1151.0)
+    aws-sdk-core (3.230.0)
       aws-eventstream (~> 1, >= 1.3.0)
       aws-partitions (~> 1, >= 1.992.0)
       aws-sigv4 (~> 1.9)
@@ -273,7 +302,7 @@ GEM
     aws-sdk-kms (1.110.0)
       aws-sdk-core (~> 3, >= 3.228.0)
       aws-sigv4 (~> 1.5)
-    aws-sdk-s3 (1.196.1)
+    aws-sdk-s3 (1.197.0)
       aws-sdk-core (~> 3, >= 3.228.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.5)
@@ -345,12 +374,24 @@ GEM
     date_validator (0.12.0)
       activemodel (>= 3)
       activesupport (>= 3)
+    decidim-cdtb (0.5.5)
+      decidim (>= 0.28.0)
+      rails (>= 6)
+      ruby-progressbar
     decidim-decidim_awesome (0.12.3)
       active_hashcash (~> 0.4.0)
       decidim-admin (>= 0.29.1, < 0.30)
       decidim-core (>= 0.29.1, < 0.30)
       deface (>= 1.5)
       sassc (~> 2.3)
+    decidim-idcat_mobil (0.4.0)
+      decidim (>= 0.27.0)
+      decidim-core (>= 0.27.0)
+      omniauth-idcat_mobil (~> 0.5.0)
+    decidim-verify_wo_registration (0.3.0)
+      decidim-budgets (>= 0.28)
+      decidim-core (>= 0.28)
+      decidim-proposals (>= 0.28)
     declarative-builder (0.2.0)
       trailblazer-option (~> 0.1.0)
     declarative-option (0.1.0)
@@ -399,12 +440,12 @@ GEM
       temple
     erubi (1.13.1)
     escape_utils (1.3.0)
-    excon (1.2.8)
+    excon (1.3.0)
       logger
     execjs (2.7.0)
     extended-markdown-filter (0.7.0)
       html-pipeline (~> 2.9)
-    factory_bot (6.5.4)
+    factory_bot (6.5.5)
       activesupport (>= 6.1.0)
     factory_bot_rails (6.5.0)
       factory_bot (~> 6.5)
@@ -425,7 +466,7 @@ GEM
     ffi (1.17.2-x86_64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
     ffi (1.17.2-x86_64-linux-musl)
-    figjam (2.2.1)
+    figjam (2.0.0)
       thor (>= 0.14.0, < 2)
     file_validators (3.0.0)
       activemodel (>= 3.2)
@@ -559,7 +600,7 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2025.0805)
+    mime-types-data (3.2025.0819)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
     minitest (5.25.5)
@@ -608,9 +649,9 @@ GEM
       rack (>= 1.2, < 4)
       snaky_hash (~> 2.0, >= 2.0.3)
       version_gem (>= 1.1.8, < 3)
-    omniauth (2.1.3)
+    omniauth (2.0.4)
       hashie (>= 3.4.6)
-      rack (>= 2.2.3)
+      rack (>= 1.6.2, < 3)
       rack-protection
     omniauth-facebook (5.0.0)
       omniauth-oauth2 (~> 1.2)
@@ -619,6 +660,9 @@ GEM
       oauth2 (~> 2.0)
       omniauth (~> 2.0)
       omniauth-oauth2 (~> 1.8)
+    omniauth-idcat_mobil (0.5.0)
+      omniauth (~> 2.0.4)
+      omniauth-oauth2 (>= 1.7.2, < 2.0)
     omniauth-oauth (1.2.1)
       oauth
       omniauth (>= 1.0, < 3)
@@ -648,6 +692,7 @@ GEM
     pg_search (2.3.7)
       activerecord (>= 6.1)
       activesupport (>= 6.1)
+    phonelib (0.10.11)
     polyglot (0.3.5)
     premailer (1.27.0)
       addressable
@@ -728,7 +773,7 @@ GEM
     redis (4.8.1)
     redis-client (0.25.2)
       connection_pool
-    regexp_parser (2.11.1)
+    regexp_parser (2.11.2)
     reline (0.6.2)
       io-console (~> 0.5)
     request_store (1.5.1)
@@ -736,7 +781,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.4.1)
+    rexml (3.4.2)
     rspec (3.13.1)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -765,7 +810,7 @@ GEM
       rspec-support (~> 3.12)
     rspec-retry (0.6.2)
       rspec-core (> 3.3)
-    rspec-support (3.13.4)
+    rspec-support (3.13.5)
     rspec_junit_formatter (0.6.0)
       rspec-core (>= 2, < 4, != 2.12.0)
     rubocop (1.65.1)
@@ -805,7 +850,7 @@ GEM
     rubocop-rubycw (0.1.6)
       rubocop (~> 1.0)
     ruby-progressbar (1.13.0)
-    ruby-vips (2.2.4)
+    ruby-vips (2.2.5)
       ffi (~> 1.12)
       logger
     rubyXL (3.4.33)
@@ -815,11 +860,11 @@ GEM
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
-    selenium-webdriver (4.34.0)
+    selenium-webdriver (4.35.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
-      rubyzip (>= 1.2.2, < 3.0)
+      rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
     semantic_range (3.1.0)
     sendgrid-ruby (6.7.0)
@@ -936,13 +981,19 @@ DEPENDENCIES
   daemons
   dalli
   decidim!
+  decidim-cdtb (~> 0.5.5)
   decidim-decidim_awesome (~> 0.12.3)
   decidim-dev!
+  decidim-file_authorization_handler!
+  decidim-idcat_mobil
   decidim-initiatives!
+  decidim-term_customizer!
+  decidim-verifications-sms_direct!
+  decidim-verify_wo_registration (~> 0.3.0)
   delayed_job_active_record
   execjs (~> 2.7.0)
   faker
-  figjam
+  figjam (= 2.0.0)
   fog-aws
   letter_opener_web
   listen
@@ -952,6 +1003,7 @@ DEPENDENCIES
   rspec-rails (~> 6.0.4)
   rubocop-factory_bot
   rubocop-rspec
+  rubocop-rspec_rails
   sendgrid-ruby
   sentry-raven
   sidekiq
@@ -966,4 +1018,4 @@ RUBY VERSION
    ruby 3.2.6p234
 
 BUNDLED WITH
-   2.5.14
+   2.6.8
