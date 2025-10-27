@@ -33,3 +33,8 @@ en:
   decidim:
     sms:
       text: "Your code to be verified at Decidim Calafell is: %{code}"
+    verifications:
+      id_documents:
+        dni: DNI
+        nie: NIE
+        passport: Passport

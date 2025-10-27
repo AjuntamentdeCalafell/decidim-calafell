@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
-  s.required_ruby_version = ">= 3.1.7"
+  s.required_ruby_version = ">= 3.2.6"
 
   # rubocop: disable Lint/ConstantDefinitionInBlock
   DECIDIM_VERSION = "~> #{Decidim::Verifications::SmsDirect::DECIDIM_VERSION}".freeze
@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
   s.add_dependency "decidim-core", DECIDIM_VERSION
   s.add_dependency "decidim-verifications", DECIDIM_VERSION
   s.add_dependency "phonelib", ">= 0.8.3"
-  s.add_dependency "rails", ">= 6.0"
+  s.add_dependency "rails", ">= 7.0.8"
 
   s.metadata["rubygems_mfa_required"] = "true"
 end
