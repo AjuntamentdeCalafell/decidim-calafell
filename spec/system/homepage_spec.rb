@@ -13,6 +13,6 @@ describe "Visit the home page", :perform_enqueued, type: :system do
 
   it "renders the home page" do
     visit decidim.root_path
-    expect(page).to have_content(/Welcome to .* participatory platform/i)
+    expect(page).to have_content(/Bienvenida a la plataforma participativa/i)
   end
 end
