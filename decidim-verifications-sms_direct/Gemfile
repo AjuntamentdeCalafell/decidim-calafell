@@ -12,7 +12,7 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.29-stable" }.freeze
+DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim", branch: "release/0.30-stable" }.freeze
 
 group :development, :test do
   gem "bootsnap", require: false
