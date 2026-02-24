@@ -39,16 +39,16 @@ Decidim.configure do |config|
   config.track_newsletter_links = Rails.application.secrets.decidim[:track_newsletter_links].present? unless Rails.application.secrets.decidim[:track_newsletter_links] == "auto"
 
   # Map and Geocoder configuration
-  config.maps = {
-    provider: :here,
-    api_key: Rails.application.secrets.maps[:api_key],
-    static: { url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview" }
-  }
+  # config.maps = {
+  #   provider: :here,
+  #   api_key: Rails.application.secrets.maps[:api_key],
+  #   static: { url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview" }
+  # }
 
-  config.geocoder = {
-    timeout: 5,
-    units: :km
-  }
+  # config.geocoder = {
+  #   timeout: 5,
+  #   units: :km
+  # }
 
   # Workaround to enable SVG assets cors
   # config.cors_enabled = Rails.application.secrets.decidim[:cors_enabled].present?
