@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-module-term_customizer.git
-  revision: e369bc933f06fd1e47d6987fa6e408f0a2549e73
+  revision: a92bfae0375db042db72970dee92ee4ccd0be1e3
   branch: upgrade/decidim_0.29
   specs:
     decidim-term_customizer (0.29.0)
