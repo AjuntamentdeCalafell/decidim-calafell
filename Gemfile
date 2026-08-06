@@ -3,17 +3,16 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch: "release/0.29-stable" }.freeze
+DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch: "release/0.30-stable" }.freeze
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-cdtb", "~> 0.5.5"
-gem "decidim-decidim_awesome", "~> 0.12.3"
+gem "decidim-decidim_awesome", "~> 0.13.0"
 gem "decidim-file_authorization_handler",
-    git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git",
-    tag: "v0.29.2"
+    git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git"
 gem "decidim-idcat_mobil"
 gem "decidim-initiatives", DECIDIM_VERSION
-gem "decidim-term_customizer", git: "https://github.com/CodiTramuntana/decidim-module-term_customizer.git", branch: "upgrade/decidim_0.29"
+gem "decidim-term_customizer", git: "https://github.com/CodiTramuntana/decidim-module-term_customizer.git", branch: "upgrade/decidim_0.30"
 gem "decidim-verifications-sms_direct", path: "."
 gem "decidim-verify_wo_registration", "~> 0.3.0"
 

@@ -4,9 +4,10 @@
 class InnovaTelecomSmsGateway
   attr_reader :mobile_phone_number, :code
 
-  def initialize(mobile_phone_number, code)
+  def initialize(mobile_phone_number, code, context = {})
     @mobile_phone_number = mobile_phone_number
     @code = code
+    @context = context
   end
 
   def deliver_code

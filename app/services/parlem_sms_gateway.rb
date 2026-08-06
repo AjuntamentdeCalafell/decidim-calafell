@@ -5,10 +5,11 @@ class ParlemSmsGateway
   attr_reader :mobile_phone_number, :code
 
   # param +to_send+: A named parameter, either code or message. I.e.: `code: "TEST_code"` or `message: "whatever to say`
-  def initialize(mobile_phone_number, to_send)
+  def initialize(mobile_phone_number, to_send, context = {})
     @mobile_phone_number = mobile_phone_number.sub("+", "")
     @message = to_send[:message]
     @code = to_send[:code]
+    @context = context
     @parlem_config= Rails.application.secrets.sms[:parlem]
   end
 

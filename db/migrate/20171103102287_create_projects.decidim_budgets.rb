@@ -1,6 +1,7 @@
-# This migration comes from decidim_budgets (originally 20170127114122)
 # frozen_string_literal: true
 
+# This migration comes from decidim_budgets (originally 20170127114122)
+# This file has been modified by `decidim upgrade:migrations` task on 2026-02-13 12:20:23 UTC
 class CreateProjects < ActiveRecord::Migration[5.0]
   def change
     create_table :decidim_budgets_projects do |t|

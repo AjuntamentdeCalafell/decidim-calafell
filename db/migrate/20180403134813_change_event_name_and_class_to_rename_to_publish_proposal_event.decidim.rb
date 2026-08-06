@@ -1,6 +1,7 @@
-# This migration comes from decidim (originally 20180326075746)
 # frozen_string_literal: true
 
+# This migration comes from decidim (originally 20180323102631)
+# This file has been modified by `decidim upgrade:migrations` task on 2026-02-13 12:20:23 UTC
 class ChangeEventNameAndClassToRenameToPublishProposalEvent < ActiveRecord::Migration[5.1]
   def up
     # rubocop:disable Rails/SkipsModelValidations
