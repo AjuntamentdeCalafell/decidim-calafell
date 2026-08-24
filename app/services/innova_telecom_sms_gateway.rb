@@ -11,7 +11,7 @@ class InnovaTelecomSmsGateway
     @context = context
   end
 
-  def deliver_code
+  def deliver_code?
     if response.xpath("//Fault").present? || response.to_s.include?("NOK")
       report_error
       false

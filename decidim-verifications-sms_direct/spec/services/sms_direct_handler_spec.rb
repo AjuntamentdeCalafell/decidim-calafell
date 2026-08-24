@@ -18,15 +18,13 @@ describe SmsDirectHandler do
   let(:user) { create(:user) }
 
   # rubocop: disable Lint/ConstantDefinitionInBlock
-  # rubocop: disable Style/RedundantInitialize
   class FailingGateway
     def initialize(number, code); end
 
-    def deliver_code
+    def deliver_code?
       false
     end
   end
-  # rubocop: enable Style/RedundantInitialize
   # rubocop: enable Lint/ConstantDefinitionInBlock
 
   before do

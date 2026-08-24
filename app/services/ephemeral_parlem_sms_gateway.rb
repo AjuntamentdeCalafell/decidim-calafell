@@ -9,10 +9,10 @@
 # and the permission check.
 class EphemeralParlemSmsGateway < ParlemSmsGateway
   def form_attributes
-    attributes.except(*%w[id user tos_agreement]).keys
+    attributes.except(*%w(id user tos_agreement)).keys
   end
 
   def handler_name
-    +'ephemeral_parlem_sms_gateway'
+    +"ephemeral_parlem_sms_gateway"
   end
 end

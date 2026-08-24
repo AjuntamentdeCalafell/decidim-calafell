@@ -9,7 +9,7 @@ namespace :parlem do
     msg= args.msg.presence || "Code is TEST_CODE"
 
     sms_gateway= Decidim.sms_gateway_service.to_s.constantize
-    success= sms_gateway.new(mobile_phone_number, message: msg).deliver_code
+    success= sms_gateway.new(mobile_phone_number, message: msg).deliver_code?
     puts "Sending SMS success? #{success}"
     puts "(see the log for more details)" unless success
   end
