@@ -19,8 +19,6 @@ describe SmsDirectHandler do
 
   # rubocop: disable Lint/ConstantDefinitionInBlock
   class FailingGateway
-    def initialize(number, code); end
-
     def deliver_code?
       false
     end
