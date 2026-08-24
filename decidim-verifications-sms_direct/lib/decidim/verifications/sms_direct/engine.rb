@@ -24,6 +24,17 @@ module Decidim
           Decidim::Verifications.register_workflow(:sms_direct) do |workflow|
             workflow.form = "SmsDirectHandler"
           end
+
+          return unless ENV.fetch("ENABLE_EPHEMERAL_PARLEM_SMS_GATEWAY", "false") == "true"
+
+          # Enable Ephemeral Verification
+          Decidim::Verifications.register_workflow(:ephemeral_parlem_sms_gateway) do |workflow|
+            workflow.ephemeral = true
+            workflow.form = "EphemeralParlemSmsGateway"
+            workflow.expires_in = 1.hour
+            workflow.renewable = true
+            workflow.time_between_renewals = 5.minutes
+          end
         end
 
         initializer "verifiers_sms_direct.mount_routes" do |_app|

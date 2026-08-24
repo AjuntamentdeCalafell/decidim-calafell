@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 # A Service to send SMS to Calafell's provider so users can be verified by SMS.
+# DEPRECATED in favor of ParlemSmsGateway, which is the new provider for Calafell.
 class InnovaTelecomSmsGateway
   attr_reader :mobile_phone_number, :code
 

@@ -206,11 +206,11 @@ GIT
 PATH
   remote: .
   specs:
-    decidim-verifications-sms_direct (0.3.0)
-      decidim (~> 0.30.0)
-      decidim-admin (~> 0.30.0)
-      decidim-core (~> 0.30.0)
-      decidim-verifications (~> 0.30.0)
+    decidim-verifications-sms_direct (0.4.0)
+      decidim (~> 0.30.9)
+      decidim-admin (~> 0.30.9)
+      decidim-core (~> 0.30.9)
+      decidim-verifications (~> 0.30.9)
       phonelib (>= 0.8.3)
       rails (>= 7.0.8)
 
