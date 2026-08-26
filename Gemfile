@@ -6,7 +6,7 @@ ruby RUBY_VERSION
 DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch: "release/0.30-stable" }.freeze
 
 gem "decidim", DECIDIM_VERSION
-gem "decidim-cdtb", "~> 0.5.5"
+gem "decidim-cdtb", "~> 0.6.0"
 gem "decidim-decidim_awesome", "~> 0.13.0"
 gem "decidim-file_authorization_handler",
     git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git"

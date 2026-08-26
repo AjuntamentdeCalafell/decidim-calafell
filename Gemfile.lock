@@ -387,8 +387,8 @@ GEM
     date_validator (0.12.0)
       activemodel (>= 3)
       activesupport (>= 3)
-    decidim-cdtb (0.5.5)
-      decidim (>= 0.28.0)
+    decidim-cdtb (0.6.0)
+      decidim (>= 0.29.0)
       rails (>= 6)
       ruby-progressbar
     decidim-decidim_awesome (0.13.2)
@@ -1041,7 +1041,7 @@ DEPENDENCIES
   daemons
   dalli
   decidim!
-  decidim-cdtb (~> 0.5.5)
+  decidim-cdtb (~> 0.6.0)
   decidim-decidim_awesome (~> 0.13.0)
   decidim-dev!
   decidim-file_authorization_handler!
