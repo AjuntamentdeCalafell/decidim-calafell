@@ -13,7 +13,7 @@ class ParlemSmsGateway
     @parlem_config= Rails.application.secrets.sms[:parlem]
   end
 
-  def deliver_code
+  def deliver_code?
     raise "Nothing to send!" unless @message.present? || @code.present?
 
     response= perform_request

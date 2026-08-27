@@ -21,9 +21,9 @@ describe InnovaTelecomSmsGateway do
 &lt;/ResultadoOp&gt;</enviosms2Return></enviosms2Response></soapenv:Body></soapenv:Envelope>"))
     end
 
-    describe "deliver_code" do
+    describe "deliver_code?" do
       it "returns true" do
-        expect(subject.deliver_code).to be_truthy
+        expect(subject).to be_deliver_code
       end
     end
 
@@ -46,9 +46,9 @@ describe InnovaTelecomSmsGateway do
 &lt;/ResultadoOp&gt;</enviosms2Return></enviosms2Response></soapenv:Body></soapenv:Envelope>"))
     end
 
-    describe "deliver_code" do
+    describe "deliver_code?" do
       it "returns false" do
-        expect(subject.deliver_code).to be_falsey
+        expect(subject).not_to be_deliver_code
       end
     end
   end

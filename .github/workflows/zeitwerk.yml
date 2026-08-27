@@ -35,7 +35,7 @@ jobs:
       DB_PASSWORD: postgres
       DB_HOST: localhost
       SECRET_KEY_BASE: "secret_key_base"
-
+      ENABLE_EPHEMERAL_PARLEM_SMS_GATEWAY: true
 
     steps:
       - uses: actions/checkout@v4

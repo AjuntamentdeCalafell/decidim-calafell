@@ -38,3 +38,10 @@ en:
         dni: DNI
         nie: NIE
         passport: Passport
+    authorization_handlers:
+      ephemeral_parlem_sms_gateway:
+        explanation: Verify your account with SMS
+        fields:
+          mobile_phone_number: Mobile Phone Number
+        name: SMS Verification
+        type: SMS

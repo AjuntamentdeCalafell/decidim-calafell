@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 # A Service to send SMS to Calafell's provider so users can be verified by SMS.
+# DEPRECATED in favor of ParlemSmsGateway, which is the new provider for Calafell.
 class InnovaTelecomSmsGateway
   attr_reader :mobile_phone_number, :code
 
@@ -10,7 +11,7 @@ class InnovaTelecomSmsGateway
     @context = context
   end
 
-  def deliver_code
+  def deliver_code?
     if response.xpath("//Fault").present? || response.to_s.include?("NOK")
       report_error
       false

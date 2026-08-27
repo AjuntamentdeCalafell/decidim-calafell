@@ -28,6 +28,8 @@ default: &default
   HERE_API_KEY: "here_api_key"
   SECRET_KEY_BASE: "must be different for each environment; run bin/rake secret and copy here"
 
+  ENABLE_EPHEMERAL_PARLEM_SMS_GATEWAY: true
+
 development:
   <<: *default
 

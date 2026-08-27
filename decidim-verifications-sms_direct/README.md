@@ -44,6 +44,18 @@ This module uses the fix token, not the temporal token.
 
 To clean the expired codes a cron job should be scheduled. This cron must run the sms_direct:clean_expired_codes rake task. It is recommended to schedule the cron once evey night.
 
+### Ephemeral authorization handler
+
+The optional ephemeral authorization workflow can be enabled by setting the
+`ENABLE_EPHEMERAL_PARLEM_SMS_GATEWAY` environment variable to `true`:
+
+```bash
+ENABLE_EPHEMERAL_PARLEM_SMS_GATEWAY=true
+```
+
+The regular `parlem_sms_gateway` workflow is always available.
+When `ENABLE_EPHEMERAL_PARLEM_SMS_GATEWAY=true`, the `ephemeral_parlem_sms_gateway` workflow is also registered. Ephemeral authorizations expire after one hour and can be renewed every five minutes. The option is disabled by default.
+
 ### Run tests
 
 Create a dummy app in your application (if not present):

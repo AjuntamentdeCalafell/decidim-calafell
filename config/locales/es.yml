@@ -19,6 +19,12 @@ es:
           date_of_birth: Fecha de nacimiento
         name: El padrón
     census_authorization_handler:
+      ephemeral_parlem_sms_gateway:
+        explanation: Verifícate con SMS
+        fields:
+          mobile_phone_number: Número de teléfono móvil
+        name: Verificación por SMS
+        type: SMS
       document_types:
         dni: DNI
         nie: NIE

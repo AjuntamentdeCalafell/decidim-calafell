@@ -19,9 +19,9 @@ describe ParlemSmsGateway do
         .and_return(msg_json)
     end
 
-    describe "deliver_code" do
+    describe "deliver_code?" do
       it "returns true" do
-        expect(subject.deliver_code).to be_truthy
+        expect(subject).to be_deliver_code
       end
     end
 
@@ -42,9 +42,9 @@ describe ParlemSmsGateway do
         .and_return(error_json)
     end
 
-    describe "deliver_code" do
+    describe "deliver_code?" do
       it "returns false" do
-        expect(subject.deliver_code).to be_falsey
+        expect(subject).not_to be_deliver_code
       end
     end
   end
