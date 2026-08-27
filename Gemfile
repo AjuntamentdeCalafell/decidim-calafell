@@ -8,7 +8,7 @@ DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch
 gem "decidim", DECIDIM_VERSION
 gem "decidim-cdtb", "~> 0.6.0"
 gem "decidim-decidim_awesome", "~> 0.13.0"
-gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git"
+gem "decidim-file_authorization_handler", "~> 0.30.1.3"
 gem "decidim-idcat_mobil"
 gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-term_customizer", git: "https://github.com/CodiTramuntana/decidim-module-term_customizer.git", branch: "upgrade/decidim_0.30"
