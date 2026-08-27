@@ -25,7 +25,7 @@ module Decidim
             workflow.form = "SmsDirectHandler"
           end
 
-          return unless ENV.fetch("ENABLE_EPHEMERAL_PARLEM_SMS_GATEWAY", "false") == "true"
+          next unless ENV.fetch("ENABLE_EPHEMERAL_PARLEM_SMS_GATEWAY", "false") == "true"
 
           # Enable Ephemeral Verification
           Decidim::Verifications.register_workflow(:ephemeral_parlem_sms_gateway) do |workflow|
