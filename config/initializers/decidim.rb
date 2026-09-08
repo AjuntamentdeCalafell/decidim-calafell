@@ -79,7 +79,7 @@ Decidim.configure do |config|
   config.content_security_policies_extra = {
     "img-src" => %w('self' data: https://*.s3.eu-west-3.amazonaws.com),
     "connect-src" => %w('self' https://*.s3.eu-west-3.amazonaws.com),
-    "frame-src" => %w('self' https://rootsys.dev/.zetta/*),
+    "frame-src" => %w('self' https://rootsys.dev/.zetta/*)
   }
   # rubocop: enable Lint/PercentStringArray
 
