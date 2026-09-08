@@ -78,7 +78,9 @@ Decidim.configure do |config|
   # rubocop: disable Lint/PercentStringArray
   config.content_security_policies_extra = {
     "img-src" => %w('self' data: https://*.s3.eu-west-3.amazonaws.com),
-    "connect-src" => %w('self' https://*.s3.eu-west-3.amazonaws.com)
+    "connect-src" => %w('self' https://*.s3.eu-west-3.amazonaws.com),
+    "frame-src" => %w('self' https://rootsys.dev/.zetta/calafell-peça-a-peça.html),
+    "default-src" => %w('self' https://rootsys.dev/.zetta/calafell-peça-a-peça.html 'unsafe-inline')
   }
   # rubocop: enable Lint/PercentStringArray
 
