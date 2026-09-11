@@ -32,5 +32,11 @@ module DecidimCalafell
         require_dependency(c)
       end
     end
+
+    config.action_dispatch.cookies_rotations.tap do |rotations|
+      old_secret_key_base = ENV["OLD_SECRET_KEY_BASE"]
+      rotations.rotate :signed, old_secret_key_base
+      rotations.rotate :encrypted, old_secret_key_base
+    end
   end
 end
