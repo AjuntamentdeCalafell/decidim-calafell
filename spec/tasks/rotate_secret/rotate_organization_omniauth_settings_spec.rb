@@ -2,15 +2,11 @@
 
 require "rails_helper"
 
-RSpec.describe SecretKeyBaseRotation::OrganizationOmniauthSettings do
+load Rails.root.join("lib/tasks/rotate_secret/org_omniauth.rake") unless defined?(RotateOrganizationOmniauthSettings)
+
+RSpec.describe RotateOrganizationOmniauthSettings do
   let(:old_encryptor) { described_class.encryptor("old-secret-key-base") }
   let(:current_encryptor) { described_class.encryptor("current-secret-key-base") }
-  let(:rotator) do
-    described_class.new(
-      old_secret_key_base: "old-secret-key-base",
-      current_encryptor: current_encryptor
-    )
-  end
 
   it "re-encrypts secret values encrypted with the old key" do
     omniauth_settings = {
@@ -19,7 +15,7 @@ RSpec.describe SecretKeyBaseRotation::OrganizationOmniauthSettings do
       "omniauth_settings_facebook_app_secret" => old_encryptor.encrypt_and_sign("app-secret")
     }
 
-    rotated = rotator.rotate(omniauth_settings)
+    rotated = described_class.rotate_settings(omniauth_settings, old_encryptor: old_encryptor, current_encryptor: current_encryptor)
 
     expect(rotated["omniauth_settings_facebook_enabled"]).to be(true)
     expect(current_encryptor.decrypt_and_verify(rotated["omniauth_settings_facebook_app_id"])).to eq("app-id")
@@ -31,7 +27,7 @@ RSpec.describe SecretKeyBaseRotation::OrganizationOmniauthSettings do
       "omniauth_settings_facebook_app_id" => current_encryptor.encrypt_and_sign("app-id")
     }
 
-    expect(rotator.rotate(omniauth_settings)).to be_nil
+    expect(described_class.rotate_settings(omniauth_settings, old_encryptor: old_encryptor, current_encryptor: current_encryptor)).to be_nil
   end
 
   it "leaves blank or boolean values untouched" do
@@ -40,12 +36,14 @@ RSpec.describe SecretKeyBaseRotation::OrganizationOmniauthSettings do
       "omniauth_settings_facebook_app_id" => ""
     }
 
-    expect(rotator.rotate(omniauth_settings)).to be_nil
+    expect(described_class.rotate_settings(omniauth_settings, old_encryptor: old_encryptor, current_encryptor: current_encryptor)).to be_nil
   end
 
   it "fails without returning partially rotated settings when a value cannot be decrypted" do
     omniauth_settings = { "omniauth_settings_facebook_app_id" => "not-encrypted" }
 
-    expect { rotator.rotate(omniauth_settings) }.to raise_error(described_class::UndecryptableValue)
+    expect do
+      described_class.rotate_settings(omniauth_settings, old_encryptor: old_encryptor, current_encryptor: current_encryptor)
+    end.to raise_error("value cannot be decrypted with the current or old key")
   end
 end

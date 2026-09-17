@@ -2,15 +2,13 @@
 
 require "rails_helper"
 
-RSpec.describe SecretKeyBaseRotation::InitiativesVoteHashId do
+load Rails.root.join("lib/tasks/rotate_secret/vote_hash_ids.rake") unless defined?(RotateInitiativesVoteHashIds)
+
+RSpec.describe RotateInitiativesVoteHashIds do
   let(:old_secret_key_base) { "old-secret-key-base" }
   let(:current_secret_key_base) { "current-secret-key-base" }
-  let(:generator) do
-    described_class.new(
-      old_secret_key_base: old_secret_key_base,
-      current_secret_key_base: current_secret_key_base
-    )
-  end
+  let(:current_encryptor) { described_class.encryptor(current_secret_key_base) }
+  let(:old_encryptor) { described_class.encryptor(old_secret_key_base) }
 
   it "generates the same hash as VoteForm for votes without personal metadata" do
     vote = instance_double(
@@ -22,7 +20,8 @@ RSpec.describe SecretKeyBaseRotation::InitiativesVoteHashId do
 
     expected = Digest::MD5.hexdigest("7-12-#{current_secret_key_base}")
 
-    expect(generator.generate(vote)).to eq(expected)
+    identifier = described_class.identifier(vote, current_encryptor: current_encryptor, old_encryptor: old_encryptor)
+    expect(Digest::MD5.hexdigest("7-#{identifier}-#{current_secret_key_base}")).to eq(expected)
   end
 
   it "uses the document number from metadata encrypted with the old key" do
@@ -37,7 +36,8 @@ RSpec.describe SecretKeyBaseRotation::InitiativesVoteHashId do
 
     expected = Digest::MD5.hexdigest("7-12345678A-#{current_secret_key_base}")
 
-    expect(generator.generate(vote)).to eq(expected)
+    identifier = described_class.identifier(vote, current_encryptor: current_encryptor, old_encryptor: old_encryptor)
+    expect(Digest::MD5.hexdigest("7-#{identifier}-#{current_secret_key_base}")).to eq(expected)
   end
 
   it "supports metadata already encrypted with the current key" do
@@ -52,7 +52,8 @@ RSpec.describe SecretKeyBaseRotation::InitiativesVoteHashId do
 
     expected = Digest::MD5.hexdigest("7-12345678A-#{current_secret_key_base}")
 
-    expect(generator.generate(vote)).to eq(expected)
+    identifier = described_class.identifier(vote, current_encryptor: current_encryptor, old_encryptor: old_encryptor)
+    expect(Digest::MD5.hexdigest("7-#{identifier}-#{current_secret_key_base}")).to eq(expected)
   end
 
   it "fails when encrypted metadata cannot be decrypted" do
@@ -63,6 +64,8 @@ RSpec.describe SecretKeyBaseRotation::InitiativesVoteHashId do
       encrypted_metadata: "not-encrypted"
     )
 
-    expect { generator.generate(vote) }.to raise_error(described_class::UndecryptableMetadata)
+    expect do
+      described_class.decrypt_metadata(vote.encrypted_metadata, current_encryptor: current_encryptor, old_encryptor: old_encryptor)
+    end.to raise_error("encrypted_metadata cannot be decrypted with the current or old key")
   end
 end
