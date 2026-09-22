@@ -2,11 +2,12 @@
 
 require "rails_helper"
 
+load Rails.root.join("lib/tasks/rotate_secret/shared.rake") unless defined?(RotateSecretTaskSupport)
 load Rails.root.join("lib/tasks/rotate_secret/org_omniauth.rake") unless defined?(RotateOrganizationOmniauthSettings)
 
 RSpec.describe RotateOrganizationOmniauthSettings do
-  let(:old_encryptor) { described_class.encryptor("old-secret-key-base") }
-  let(:current_encryptor) { described_class.encryptor("current-secret-key-base") }
+  let(:old_encryptor) { RotateSecretTaskSupport.encryptor("old-secret-key-base", salt: "attribute") }
+  let(:current_encryptor) { RotateSecretTaskSupport.encryptor("current-secret-key-base", salt: "attribute") }
 
   it "re-encrypts secret values encrypted with the old key" do
     omniauth_settings = {

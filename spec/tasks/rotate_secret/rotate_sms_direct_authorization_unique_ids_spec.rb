@@ -2,13 +2,14 @@
 
 require "rails_helper"
 
+load Rails.root.join("lib/tasks/rotate_secret/shared.rake") unless defined?(RotateSecretTaskSupport)
 load Rails.root.join("lib/tasks/rotate_secret/sms_unique_ids.rake") unless defined?(RotateSmsDirectAuthorizationUniqueIds)
 
 RSpec.describe RotateSmsDirectAuthorizationUniqueIds do
   let(:old_secret_key_base) { "old-secret-key-base" }
   let(:current_secret_key_base) { "current-secret-key-base" }
   let(:current_encryptor) { Decidim::AttributeEncryptor.cryptor }
-  let(:old_encryptor) { described_class.metadata_encryptor(old_secret_key_base) }
+  let(:old_encryptor) { RotateSecretTaskSupport.encryptor(old_secret_key_base, salt: "attribute") }
   let(:organization) { instance_double(Decidim::Organization, id: 42) }
   let(:user) { instance_double(Decidim::User, organization: organization) }
   let(:authorization) { instance_double(Decidim::Authorization, id: 7, user: user, unique_id: old_unique_id, read_attribute: metadata) }

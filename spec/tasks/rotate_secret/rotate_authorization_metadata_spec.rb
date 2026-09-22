@@ -2,11 +2,12 @@
 
 require "rails_helper"
 
+load Rails.root.join("lib/tasks/rotate_secret/shared.rake") unless defined?(RotateSecretTaskSupport)
 load Rails.root.join("lib/tasks/rotate_secret/auth_metadata.rake") unless defined?(RotateAuthorizationMetadata)
 
 RSpec.describe RotateAuthorizationMetadata do
-  let(:old_encryptor) { described_class.encryptor("old-secret-key-base") }
-  let(:current_encryptor) { described_class.encryptor("current-secret-key-base") }
+  let(:old_encryptor) { RotateSecretTaskSupport.encryptor("old-secret-key-base", salt: "attribute") }
+  let(:current_encryptor) { RotateSecretTaskSupport.encryptor("current-secret-key-base", salt: "attribute") }
 
   it "re-encrypts each old metadata value with the current key" do
     old_metadata = {

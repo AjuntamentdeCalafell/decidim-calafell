@@ -109,7 +109,7 @@ module RotateFileAuthorizationHandlerCensus
       "inserted=#{summary[:inserted]}",
       "removed_authorizations=#{summary[:removed_authorizations]}",
       "reset_authorizations=#{summary[:reset_authorizations]}"
-    ].join(", ")
+    ].join("\n")
 
     puts "File authorization census rebuild#{" (dry run)" if dry_run}: #{summary}"
   end
