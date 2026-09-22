@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require_relative "rotate_secret_task_support"
 
 module RotateOrganizationOmniauthSettings
   module_function

@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-load Rails.root.join("lib/tasks/rotate_secret/shared.rake") unless defined?(RotateSecretTaskSupport)
+load Rails.root.join("lib/tasks/rotate_secret/rotate_secret_task_support.rb") unless defined?(RotateSecretTaskSupport)
 load Rails.root.join("lib/tasks/rotate_secret/auth_metadata.rake") unless defined?(RotateAuthorizationMetadata)
 
 RSpec.describe RotateAuthorizationMetadata do

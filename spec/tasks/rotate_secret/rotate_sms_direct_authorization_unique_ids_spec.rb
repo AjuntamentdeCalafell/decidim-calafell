@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-load Rails.root.join("lib/tasks/rotate_secret/shared.rake") unless defined?(RotateSecretTaskSupport)
+load Rails.root.join("lib/tasks/rotate_secret/rotate_secret_task_support.rb") unless defined?(RotateSecretTaskSupport)
 load Rails.root.join("lib/tasks/rotate_secret/sms_unique_ids.rake") unless defined?(RotateSmsDirectAuthorizationUniqueIds)
 
 RSpec.describe RotateSmsDirectAuthorizationUniqueIds do
